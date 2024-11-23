@@ -497,7 +497,7 @@ body::-webkit-scrollbar-track {
 /* Ajuste para dispositivos móviles */
 @media (max-width: 768px) {
   .freelancer {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Gradiente más claro */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Gradiente más claro */
       url(./assets/Screenshot_8.png);
   }
 }

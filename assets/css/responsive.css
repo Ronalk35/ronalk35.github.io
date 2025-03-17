@@ -43,6 +43,41 @@
 	}
 }
 
+/* tablets - ipads */
+@media (max-width: 767px) {
+	.banner_content h1{
+		font-size: 30px;
+	}
+	.banner_content p {
+		max-width: 100%;
+		margin: 0 auto;
+		text-align: justify; /* Justifica el texto */
+		text-justify: inter-word;
+	}
+	.banner_content{
+		margin-top: 130px;
+	}
+	.about-content {
+		margin-top: 30px;
+	}
+	.section-title {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+	.section-title:after {
+		content: "";
+		position: absolute;
+		padding: 38px;
+	}
+	.services-item {
+		margin-bottom: 30px;
+	}
+	.testimonial .description {
+		text-align: center;
+		padding: 20px 0;
+	}
+}
+
 /* only small tablets */
 @media (min-width: 768px) and (max-width: 991px) {
 	.section-title {

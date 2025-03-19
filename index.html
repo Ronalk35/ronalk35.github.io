@@ -148,6 +148,13 @@
 			</div>
 		</div>
 	</nav>
+	<!-- Contador de visitas con efecto hover -->
+	<div class="visitor-counter">
+		<div class="counter-box">
+			<i class="fa-solid fa-eye"></i>
+			<span class="counter-text">0 visitas</span>
+		</div>
+	</div>
 	<!-- END NAVBAR -->
 
 	<!-- Hero Area Start -->
@@ -1073,6 +1080,20 @@
 				});
 			</script>
 			<!-- JS script para manejo de formulario fin-->
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+                              // Crear una clave única para tu sitio
+                                fetch('https://api.countapi.xyz/hit/ronalk35.github.io/visits')
+                                      .then(response => response.json())
+                                      .then(data => {
+                                document.querySelector('.counter-text').textContent = data.value + ' visitas';
+                               })
+                        .catch(error => {
+                        console.error('Error al obtener el contador de visitas:', error);
+                        document.querySelector('.counter-text').textContent = '-- visitas';
+                              });
+                              });
+			</script>
 </body>
 
 </html>

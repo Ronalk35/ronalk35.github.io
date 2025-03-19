@@ -1082,17 +1082,32 @@
 			<!-- JS script para manejo de formulario fin-->
 			<script>
 				document.addEventListener('DOMContentLoaded', function() {
-                              // Crear una clave única para tu sitio
-                                fetch('https://api.countapi.xyz/hit/ronalk35.github.io/visits')
-                                      .then(response => response.json())
-                                      .then(data => {
-                                document.querySelector('.counter-text').textContent = data.value + ' visitas';
-                               })
-                        .catch(error => {
-                        console.error('Error al obtener el contador de visitas:', error);
-                        document.querySelector('.counter-text').textContent = '-- visitas';
-                              });
-                              });
+  // Obtener el valor actual
+  fetch('https://api.countapi.xyz/get/ronalk35.github.io/contador-personalizado')
+    .then(response => response.json())
+    .then(data => {
+      // Si el valor es null, inicializarlo
+      if (data.value === null) {
+        fetch('https://api.countapi.xyz/set/ronalk35.github.io/contador-personalizado?value=1')
+          .then(response => response.json())
+          .then(data => {
+            document.querySelector('.counter-text').textContent = data.value + ' visitas';
+          });
+      } else {
+        // Incrementar el valor
+        fetch('https://api.countapi.xyz/update/ronalk35.github.io/contador-personalizado?amount=1')
+          .then(response => response.json())
+          .then(data => {
+            document.querySelector('.counter-text').textContent = data.value + ' visitas';
+            console.log('Contador actualizado:', data.value);
+          });
+      }
+    })
+    .catch(error => {
+      console.error('Error con el contador:', error);
+      document.querySelector('.counter-text').textContent = '-- visitas';
+    });
+});
 			</script>
 </body>
 

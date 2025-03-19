@@ -1081,34 +1081,26 @@
 			</script>
 			<!-- JS script para manejo de formulario fin-->
 			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-  // Obtener el valor actual
-  fetch('https://api.countapi.xyz/get/ronalk35.github.io/contador-personalizado')
-    .then(response => response.json())
-    .then(data => {
-      // Si el valor es null, inicializarlo
-      if (data.value === null) {
-        fetch('https://api.countapi.xyz/set/ronalk35.github.io/contador-personalizado?value=1')
-          .then(response => response.json())
-          .then(data => {
-            document.querySelector('.counter-text').textContent = data.value + ' visitas';
-          });
-      } else {
-        // Incrementar el valor
-        fetch('https://api.countapi.xyz/update/ronalk35.github.io/contador-personalizado?amount=1')
-          .then(response => response.json())
-          .then(data => {
-            document.querySelector('.counter-text').textContent = data.value + ' visitas';
-            console.log('Contador actualizado:', data.value);
-          });
-      }
-    })
-    .catch(error => {
-      console.error('Error con el contador:', error);
-      document.querySelector('.counter-text').textContent = '-- visitas';
-    });
+				// Función para simular un contador de visitas
+// En un caso real, conectarías esto a una API o base de datos
+document.addEventListener('DOMContentLoaded', function() {
+  // Simulamos obtener la cantidad de visitas desde localStorage
+  // En un caso real, esto vendría de tu backend
+  let visitas = localStorage.getItem('contadorVisitas');
+  
+  if (!visitas) {
+    // Si no existe, inicializamos con un número aleatorio para simular visitas previas
+    visitas = Math.floor(Math.random() * 1000) + 100;
+    localStorage.setItem('contadorVisitas', visitas);
+  } else {
+    // Incrementamos en 1 cada vez que se carga la página
+    visitas = parseInt(visitas) + 1;
+    localStorage.setItem('contadorVisitas', visitas);
+  }
+  
+  // Actualizamos el texto del contador
+  document.querySelector('.counter-text').textContent = visitas + ' visitas';
 });
-			</script>
 </body>
 
 </html>

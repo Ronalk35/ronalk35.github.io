@@ -1795,3 +1795,64 @@ body {
   padding: 0;
   background-color: var(--theme-ui-bg);
 }
+
+/* ==========================================================================
+*. Color navegación fin
+========================================================================== */
+
+/* ==========================================================================
+*. Contador de visitas
+========================================================================== */
+/* Estilos para el contador de visitas */
+.visitor-counter {
+  position: fixed;
+  top: 100px; 
+  right: 0px;
+  z-index: 999;
+}
+
+.counter-box {
+  display: flex;
+  align-items: center;
+  background-color: #0056b3; 
+  color: white;
+  padding: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.counter-box i {
+  font-size: 20px;
+  margin-right: 8px;
+  margin-right: 8px;
+}
+
+.counter-text {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.counter-box:hover {
+  width: auto;
+}
+
+.counter-box:hover .counter-text {
+  width: 90px;
+  opacity: 1;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  .visitor-counter {
+    display: none; 
+  }
+}
+/* ==========================================================================
+*. Contador de visitas fin
+========================================================================== */    

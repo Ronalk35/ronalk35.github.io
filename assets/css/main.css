@@ -410,6 +410,7 @@ a.back-to-top {
   bottom: 12px;
   right: 15px;
   text-decoration: none;
+  z-index: 9999;
 }
 a.back-to-top i {
   display: block;

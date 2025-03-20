@@ -131,7 +131,7 @@
 	<nav class="navbar navbar-toggleable-sm fixed-top navbar-light bg-faded site-navigation dark_bg_menu">
 		<div class="container">
 			<a class="navbar-brand" href="https://ronalk35.github.io/ronaldurbano.c/" target="_blank">
-				<p>Ronald</p>
+				<p id="changingText">Ronald</p>
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
 				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -1147,6 +1147,21 @@ document.addEventListener('DOMContentLoaded', function() {
 					// Ejecutar la función
 					obtenerVisitas();
 				});
+			</script>
+
+			<script>
+				// Función para alternar el texto
+				function toggleText() {
+					const textElement = document.getElementById('changingText');
+					if (textElement.textContent === "Ronald") {
+						textElement.textContent = "Urbano ";
+					} else {
+						textElement.textContent = "Ronald";
+					}
+				}
+
+				// Cambiar el texto cada 3 segundos
+				setInterval(toggleText, 3000);
 			</script>
 </body>
 

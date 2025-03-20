@@ -490,13 +490,13 @@ a.back-to-top:focus {
 /* Ajustes específicos para vista móvil */
 @media only screen and (max-width: 768px) {
   .navbar-brand p {
-    font-size: 32px;
+    font-size: 34px;
     /* Reduce el tamaño del texto en móviles */
     line-height: 1.1;
     /* Asegúrate de mantenerlo proporcional */
     margin-top: 19px;
     /* Añade un margen superior controlado */
-    margin-right: 100px !important;
+    margin-right: 110px !important;
     /* Ajusta el margen izquierdo para pegarlo a la izquierda */
   }
 }

@@ -468,16 +468,23 @@ a.back-to-top:focus {
   font-size: 32px;
   text-transform: uppercase;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
-  /* Elimina márgenes superiores e inferiores */
   padding: 0;
-  /* Elimina paddings */
   line-height: 1.2;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  
+  /* Estilos profesionales para fuente de código */
+  font-family: 'Fira Code', 'Source Code Pro', 'Monaco', monospace;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
-.navbar-brand p:hover {
-  transform: scale(1.1); /* Efecto de acercamiento */
+
+/* Efecto hover elegante */
+.navbar-brand:hover p {
+  transform: translateY(-1px);
+  text-shadow: 0 2px 5px rgba(0, 86, 179, 0.5); /* Sombra azul sutil */
 }
 
 /* Ajustes específicos para vista móvil */

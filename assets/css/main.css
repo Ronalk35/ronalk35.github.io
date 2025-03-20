@@ -496,7 +496,7 @@ a.back-to-top:focus {
     /* Asegúrate de mantenerlo proporcional */
     margin-top: 19px;
     /* Añade un margen superior controlado */
-    margin-right: 114px !important;
+    margin-right: 118px !important;
     /* Ajusta el margen izquierdo para pegarlo a la izquierda */
   }
 }
@@ -556,6 +556,7 @@ a.back-to-top:focus {
   background-color: #0056b3;
   border-color: #0056b3;
   border-radius: 10px;
+  margin-right: -20px !important;
 }
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");

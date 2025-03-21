@@ -1947,4 +1947,258 @@ body {
 }
 /* ==========================================================================
 *. Contador de visitas fin
-========================================================================== */    
+========================================================================== */  
+
+
+/* ==========================================================================
+*. Technology Icons Slider Styles
+========================================================================== */ 
+
+.tech-icons-slider {
+  overflow: hidden;
+  background: #0f172a; 
+  position: relative; 
+  padding: 20px 0;
+}
+
+.tech-icons-container {
+  width: 100%;
+  overflow: hidden; 
+  margin-bottom: 40px !important;
+  padding-top: 30px; 
+  padding-bottom: 40px;
+}
+
+.tech-icons-track {
+  display: flex;
+  animation: slide 30s linear infinite;
+  will-change: transform; 
+  position: relative; 
+  padding-top: 20px; 
+  padding-bottom: 10px; 
+}
+
+/* Pausar animación al pasar el cursor */
+.tech-icons-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-icon {
+  flex: 0 0 auto;
+  padding: 0 20px;
+  position: relative;
+  padding-bottom: 0; 
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: rgba(30, 41, 59, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: visible; 
+  cursor: pointer; 
+}
+
+.tech-icon img {
+  height: 48px;
+  width: auto;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Efectos al pasar el cursor sobre el icono */
+.icon-wrapper:hover {
+  background-color: #ffffff;
+  transform: rotate(5deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiqueta que aparece al pasar el cursor */
+.icon-label {
+  position: absolute;
+  top: -38px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000; 
+  visibility: hidden; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+/* Cambio importante: ahora se activa con :hover en el icon-wrapper */
+.icon-wrapper:hover .icon-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+  visibility: visible; /* Hacerlo visible */
+}
+
+/* Añadir una flecha a la etiqueta */
+.icon-label:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0056b3 transparent transparent transparent;
+}
+
+/* Animación de desplazamiento infinito suave */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2)); 
+  }
+}
+
+/* Optimizaciones adicionales para animación más suave */
+@media (prefers-reduced-motion: no-preference) {
+  .tech-icons-track {
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 991px) {
+  .tech-icon {
+    padding: 0 15px; 
+    margin-top: 25px;
+  }
+  
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .tech-icon img {
+    height: 40px;
+  }
+  
+  .tech-icons-container {
+    padding-top: 5px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-icon {
+    padding: 0 12px; 
+    margin-top: 10px;
+  }
+  
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tech-icon img {
+    height: 32px;
+    padding-bottom: 0;
+  }
+  
+  .tech-icons-track {
+    animation-duration: 20s; 
+    padding-top: 15px; 
+    padding-bottom: 10px;
+  }
+  
+  .tech-icons-slider {
+    padding: 25px 0;
+    margin-left: 10px; 
+    margin-right: 10px; 
+  }
+  
+  .tech-icons-container {
+    padding-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icon {
+    padding: 0 6px; 
+    margin-top: 10px;
+  }
+  
+  .icon-wrapper {
+    width: 65px; 
+    height: 65px;
+  }
+  
+  .tech-icon img {
+    height: 50px; 
+    padding-bottom: 0;
+  }
+  
+  .icon-label {
+    font-size: 9px;
+    padding: 2px 5px;
+    top: -30px;
+  }
+  
+  .tech-icons-track {
+    animation-duration: 6s; 
+  }
+  
+  /* Ajuste para asegurar que muestre más iconos en la vista */
+  .tech-icons-container {
+    overflow: hidden;
+    padding-top: 0;
+    margin-bottom: 20px !important;
+  }
+  
+  /* Forzar más iconos en pantalla */
+  .tech-icons-slider {
+    padding: 15px 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Ajustes adicionales para tablet pequeña */
+@media (min-width: 481px) and (max-width: 767px) {
+  .tech-icon {
+    padding: 0 6px;
+  }
+  
+  .icon-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .tech-icons-track {
+    animation-duration: 10s; 
+  }
+}
+
+/* Para ajustar la cantidad de iconos visibles en todas las pantallas */
+.tech-icons-track {
+  display: flex;
+  animation: slide 30s linear infinite;
+  will-change: transform;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  
+  min-width: 100%;
+  width: fit-content;
+}
+
+/* ==========================================================================
+*. Technology Icons Slider Styles fin
+========================================================================== */ 

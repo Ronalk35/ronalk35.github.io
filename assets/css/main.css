@@ -2005,10 +2005,15 @@ body {
 }
 
 .tech-icon img {
-  height: 48px;
+  max-height: 68px; 
+  max-width: 68px; 
   width: auto;
+  height: auto; 
   transition: transform 0.3s ease;
   z-index: 1;
+  object-fit: contain;
+  image-rendering: auto;
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
 }
 
 /* Efectos al pasar el cursor sobre el icono */

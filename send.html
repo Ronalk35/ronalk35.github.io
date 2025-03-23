@@ -2,20 +2,32 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<!-- Agregar aquí la nueva línea de caché -->
-	<meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
-	<link rel="preconnect" href="https://unpkg.com">
-	<link rel="preconnect" href="https://kit.fontawesome.com">
-	<meta name="Description" content="Portafolio de Ronald Urbano Chávez. Programador especializado en desarrollo web, bases de datos y soluciones tecnológicas innovadoras." />
-	<meta name="keywords" content="Ronald Urbano Chávez, portafolio, desarrollo web, bases de datos, programación, soluciones tecnológicas">
-	<meta name="author" content="Ronald Urbano Chávez">
-	<meta name="theme-color" content="#0f172a">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- línea de caché -->
+    <meta name="Description"
+        content="Portafolio de Ronald Urbano Chávez. Programador especializado en desarrollo web, bases de datos y soluciones tecnológicas innovadoras." />
+    <meta name="keywords"
+        content="Ronald Urbano Chávez, portafolio, desarrollo web, bases de datos, programación, soluciones tecnológicas">
+    <meta name="author" content="Ronald Urbano Chávez">
+
+    <!-- PWA meta tags - coloca estos antes de cualquier otra cosa -->
+    <meta name="theme-color" content="#1e213d" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e213d" media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a">
+    <meta name="apple-mobile-web-app-title" content="Ronald U.">
+
+    <!-- Chrome for Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
     <title>Mensaje Enviado Exitosamente</title>
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://kit.fontawesome.com">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <style>
@@ -143,6 +155,44 @@
             color: #fff;
             border-color: #0056b3;
         }
+        :root {
+            --theme-color: #1e213d;
+        }
+
+        html {
+            background-color: var(--theme-color);
+            color-scheme: light dark;
+        }
+
+        /* Estilo específico para modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme-color: #1e213d;
+            }
+
+            html {
+                background-color: var(--theme-color);
+            }
+        }
+
+        /* Propiedad personalizada para Chrome en Android */
+        @property --theme-ui-bg {
+            syntax: "<color>";
+            inherits: true;
+            initial-value: #1e213d;
+        }
+
+        :root {
+            --theme-ui-bg: #1e213d;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--theme-ui-bg);
+        }
+
+	    
         @media (max-width: 768px) {
             .profile-name {
                 font-size: 2rem;

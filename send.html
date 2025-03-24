@@ -26,6 +26,14 @@
 
     <title>Mensaje Enviado Exitosamente</title>
 
+    <script>
+    window.onload = function() {
+        if (!document.referrer.includes('ronalk35.github.io')) {
+            window.location.href = 'https://ronalk35.github.io/';
+        }
+    };
+    </script>	
+
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://kit.fontawesome.com">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -195,7 +203,7 @@
 	    
         @media (max-width: 768px) {
             .profile-name {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
             .profile-image {
                 width: 200px;
@@ -204,7 +212,7 @@
         }
         @media (max-width: 480px) {
             .profile-name {
-                font-size: 1.5rem;
+                font-size: 2.2rem;
             }
             .profile-image {
                 width: 150px;

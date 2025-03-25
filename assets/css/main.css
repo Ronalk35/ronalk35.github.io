@@ -2207,3 +2207,64 @@ body {
 /* ==========================================================================
 *. Technology Icons Slider Styles fin
 ========================================================================== */ 
+
+/* ==========================================================================
+*. Tooltip Styles
+========================================================================== */
+
+.social-icon-link {
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .social-icon-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: #0056b3;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-size: 11px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+    margin-top: 5px;
+    z-index: 1000;
+  }
+
+  .social-icon-link::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #0056b3 transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+    margin-top: -5px;
+    z-index: 1000;
+  }
+
+  .social-icon-link:hover::after,
+  .social-icon-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ==========================================================================
+*. Tooltip Styles Fin
+========================================================================== */
+
+
+

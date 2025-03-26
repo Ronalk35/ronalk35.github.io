@@ -1935,7 +1935,7 @@ body {
 /* Estilos para el contador de visitas */
 .visitor-counter {
   position: fixed;
-  top: 100px; 
+  top: 90px; 
   right: 0px;
   z-index: 999;
 }
@@ -1945,7 +1945,7 @@ body {
   align-items: center;
   background-color: #0056b3; 
   color: white;
-  padding: 8px;
+  padding: 12px;
   transition: all 0.3s ease;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -1954,7 +1954,7 @@ body {
 }
 
 .counter-box i {
-  font-size: 20px;
+  font-size: 22px;
   margin-right: 8px;
   margin-right: 8px;
 }

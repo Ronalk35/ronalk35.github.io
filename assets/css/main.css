@@ -2271,7 +2271,7 @@ body {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     pointer-events: none;
-    margin-top: 5px;
+    margin-top: 10px;
     z-index: 1000;
   }
 
@@ -2288,7 +2288,7 @@ body {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     pointer-events: none;
-    margin-top: -5px;
+    margin-top: 0px;
     z-index: 1000;
   }
 

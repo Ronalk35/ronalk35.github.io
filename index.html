@@ -1312,38 +1312,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			<script>
 				document.addEventListener('DOMContentLoaded', function () {
-					// Función para extraer el número de visitas de HitWebCounter
-					function obtenerVisitas() {
-						const img = document.getElementById('hitwebcounter');
+        function obtenerVisitas() {
+            const img = document.getElementById('hitwebcounter');
+            
+            // Crear un nuevo elemento de imagen para obtener los datos
+            const newImg = new Image();
+            newImg.onload = function () {
+                // Esperar a que la imagen cargue
+                setTimeout(function () {
+                    const visitasElement = document.getElementById('visitas-numero');
+                    if (visitasElement) {
+                        // Obtener el valor almacenado o usar 265 como valor inicial
+                        let visitas = localStorage.getItem('hitwebcounter-value');
+                        
+                        // Si no hay valor almacenado, establecer 265
+                        if (!visitas) {
+                            visitas = 265;
+                        } else {
+                            // Incrementar el valor existente
+                            visitas = parseInt(visitas) + 1;
+                        }
+                        
+                        // Guardar el nuevo valor
+                        localStorage.setItem('hitwebcounter-value', visitas);
+                        
+                        // Actualizar el elemento con el número de visitas
+                        visitasElement.textContent = visitas.toLocaleString();
+                    }
+                }, 1000);
+            };
+            
+            newImg.src = img.src;
+        }
 
-						// Crear un nuevo elemento de imagen para obtener los datos
-						const newImg = new Image();
-						newImg.onload = function () {
-							// Esperar a que la imagen cargue
-							setTimeout(function () {
-								// Intentar obtener el valor del contador
-								// Normalmente, deberíamos usar una API, pero como no hay una disponible,
-								// usaremos un valor fijo para simular el conteo
-								const visitasElement = document.getElementById('visitas-numero');
-								if (visitasElement) {
-									// Obtener el valor almacenado o usar uno predeterminado
-									let visitas = localStorage.getItem('hitwebcounter-value');
-									if (!visitas) {
-										visitas = 227;
-									} else {
-										visitas = parseInt(visitas) + 1;
-									}
-									localStorage.setItem('hitwebcounter-value', visitas);
-									visitasElement.textContent = visitas.toLocaleString();
-								}
-							}, 1000);
-						};
-						newImg.src = img.src;
-					}
-
-					// Ejecutar la función
-					obtenerVisitas();
-				});
+        // Ejecutar la función
+        obtenerVisitas();
+    });
 			</script>
 
 			<script>

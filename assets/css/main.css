@@ -1375,6 +1375,43 @@ footer-1 h3 {
   /* Cambia el color a tu preferido */
 }
 
+
+.social__mediaIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem !important;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 0.1px solid white; /* Add white border */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.social-icon-link:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.social-icon-link .fa-brands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+
+
 /* Media Query para tablet (768px a 1024px) */
 @media (max-width: 1024px) {
   footer-1 {

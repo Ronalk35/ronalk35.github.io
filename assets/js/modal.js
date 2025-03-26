@@ -73,7 +73,7 @@ function createModalElements() {
       
       .modal-content {
         position: relative;
-        background-color: #fefefe;
+        background-color: #1e293b;
         margin: auto;
         padding: 20px;
         border-radius: 8px;
@@ -88,7 +88,7 @@ function createModalElements() {
         position: absolute;
         top: 1px;
         right: 3px;
-        color: #333;
+        color: #fff;
         font-size: 28px;
         font-weight: bold;
         cursor: pointer;
@@ -114,13 +114,13 @@ function createModalElements() {
       
       .project-info h3 {
         margin-top: 0;
-        color: #333;
+        color: #fff;
         margin-bottom: 10px;
       }
       
       .project-info p {
         margin-bottom: 15px;
-        color: #666;
+        color: #fff;
       }
       
       /* Animación rotate-scale-down */

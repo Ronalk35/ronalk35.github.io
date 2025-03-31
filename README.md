@@ -52,7 +52,7 @@ El portafolio muestra proyectos en las siguientes áreas:
 
 | Usuario              | Perfil de GitHub                                 | Foto |
 | -------------------- | ------------------------------------------------ | ---- |
-| Ronald Urbano Chavez | [@Roanlk35](https://github.com/Ronalk35) |      |
+| Ronald Urbano Chavez | [@Ronalk35](https://github.com/Ronalk35) |      |
 
 ---
 

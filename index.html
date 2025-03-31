@@ -1049,6 +1049,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/modal.js"></script>
 			<script src="assets/js/slider.js"></script>
+			<script type="module" src="assets/js/visitor-counter.js"></script>
 
 
 			<!-- Filtros de Proyectos -->
@@ -1281,68 +1282,8 @@
 				});
 			</script>
 			<!-- JS script para manejo de formulario fin-->
-			<script>
-				// Función para simular un contador de visitas
-// En un caso real, conectarías esto a una API o base de datos
-document.addEventListener('DOMContentLoaded', function() {
-  // Simulamos obtener la cantidad de visitas desde localStorage
-  // En un caso real, esto vendría de tu backend
-  let visitas = localStorage.getItem('contadorVisitas');
-  
-  if (!visitas) {
-    // Si no existe, inicializamos con un número aleatorio para simular visitas previas
-    visitas = Math.floor(Math.random() * 1000) + 100;
-    localStorage.setItem('contadorVisitas', visitas);
-  } else {
-    // Incrementamos en 1 cada vez que se carga la página
-    visitas = parseInt(visitas) + 1;
-    localStorage.setItem('contadorVisitas', visitas);
-  }
-  
-  // Actualizamos el texto del contador
-  document.querySelector('.counter-text').textContent = visitas + ' visitas';
-});
-			</script>
-
-			<script>
-				document.addEventListener('DOMContentLoaded', function () {
-        function obtenerVisitas() {
-            const img = document.getElementById('hitwebcounter');
-            
-            // Crear un nuevo elemento de imagen para obtener los datos
-            const newImg = new Image();
-            newImg.onload = function () {
-                // Esperar a que la imagen cargue
-                setTimeout(function () {
-                    const visitasElement = document.getElementById('visitas-numero');
-                    if (visitasElement) {
-                        // Obtener el valor almacenado o usar 265 como valor inicial
-                        let visitas = localStorage.getItem('hitwebcounter-value');
-                        
-                        // Si no hay valor almacenado, establecer 265
-                        if (!visitas) {
-                            visitas = 265;
-                        } else {
-                            // Incrementar el valor existente
-                            visitas = parseInt(visitas) + 1;
-                        }
-                        
-                        // Guardar el nuevo valor
-                        localStorage.setItem('hitwebcounter-value', visitas);
-                        
-                        // Actualizar el elemento con el número de visitas
-                        visitasElement.textContent = visitas.toLocaleString();
-                    }
-                }, 1000);
-            };
-            
-            newImg.src = img.src;
-        }
-
-        // Ejecutar la función
-        obtenerVisitas();
-    });
-			</script>
+			
+			
 
 			<script>
 				// Función para alternar el texto

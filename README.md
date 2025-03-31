@@ -1,4 +1,4 @@
-# Portafolio Ronald Urbano C. 2.0
+# Portafolio Ronald Urbano Chávez. 2.0
 
 ## Descripción del Proyecto
 
@@ -52,7 +52,7 @@ El portafolio muestra proyectos en las siguientes áreas:
 
 | Usuario              | Perfil de GitHub                                 | Foto |
 | -------------------- | ------------------------------------------------ | ---- |
-| Ronald Urbano Chavez | [@ronaldurbano](https://github.com/ronaldurbano) |      |
+| Ronald Urbano Chavez | [@Roanlk35](https://github.com/Ronalk35) |      |
 
 ---
 

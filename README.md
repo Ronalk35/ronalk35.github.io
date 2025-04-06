@@ -64,3 +64,7 @@ El portafolio muestra proyectos en las siguientes áreas:
 - Botón de modo claro a modo oscuro.
 
 ---
+
+## Vista Previa
+
+- Diseño del Portafolio:

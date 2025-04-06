@@ -2055,7 +2055,7 @@ body {
 
 /* Efectos al pasar el cursor sobre el icono */
 .icon-wrapper:hover {
-  background-color: #ffffff;
+  background-color: #00192e;
   transform: rotate(5deg);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }

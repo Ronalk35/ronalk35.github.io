@@ -68,3 +68,5 @@ El portafolio muestra proyectos en las siguientes áreas:
 ## Vista Previa
 
 - Diseño del Portafolio:
+
+![Vista previa del portafolio](assets/img/portafolio_ronald.png)

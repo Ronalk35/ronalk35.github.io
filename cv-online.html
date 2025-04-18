@@ -377,21 +377,29 @@
         }
 
 
-	 :root {
-  --theme-color: #1e213d;
-  --theme-ui-bg: #1e213d;
+	 /* ===============================
+   Variables base (modo claro)
+=============================== */
+:root {
+  --theme-color: #1e213d;      
+  --theme-ui-bg: #1e213d;      
 }
 
-/* Estilo base para todos los modos */
+/* ===============================
+   Estilos base para ambos modos
+=============================== */
 html, body {
   background-color: var(--theme-color);
-  color-scheme: dark light;
+  color: var(--text-color);
+  color-scheme: dark light;    
 }
 
-/* Si querés visualmente diferente en modo oscuro */
+/* ===============================
+   Modo oscuro
+=============================== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-color: #0f172a;
+    --theme-color: #0f172a;    
     --theme-ui-bg: #0f172a;
   }
 
@@ -400,13 +408,14 @@ html, body {
   }
 }
 
-/* Chrome Android: propiedad registrada */
+/* ===============================
+   Chrome Android: propiedad registrada
+=============================== */
 @property --theme-ui-bg {
   syntax: "<color>";
   inherits: true;
   initial-value: #1e213d;
 }
-
        
 
 

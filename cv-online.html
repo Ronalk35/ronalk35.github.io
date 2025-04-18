@@ -42,10 +42,21 @@
     <meta property="og:site_name" content="CV Ronald Urbano Chávez" />
 
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    <title>CV. - Ronald Urbano Chávez</title>
+    <!-- Favicon/Icons for different devices -->
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon_192.png">
+        <link rel="apple-touch-icon" sizes="192x192" href="/assets/img/favicon_192.png">
+
+    <!--Favicon for this site -->
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    
+    <title>📄 CV. - Ronald Urbano Chávez</title>
+    <script>
+    window.onload = function() {
+        if (!document.referrer.includes('ronalk35.github.io')) {
+            window.location.href = 'https://ronalk35.github.io/';
+        }
+    };
+    </script>
     <style>
         * {
             margin: 0;

@@ -75,13 +75,22 @@
             letter-spacing: 0.01em;
         }
 
-        body {
-            background-color: #0f172a;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        html {
+  background-color: #1e213d;
+  height: 100%;
+}
+
+/* Fondo visual completo */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #0f172a;  /* fondo que vos querés mostrar */
+  color-scheme: dark light;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+}
 
 
         body::-webkit-scrollbar {

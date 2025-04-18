@@ -75,15 +75,14 @@
             letter-spacing: 0.01em;
         }
 
-        /* html y body ocupan todo el espacio */
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #0f172a;
-  color-scheme: dark light;
-  font-family: system-ui, sans-serif;
-}
+       body {
+            background-color: #0f172a;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
 
 
         body::-webkit-scrollbar {
@@ -106,20 +105,16 @@ body {
             border: 2px solid #e0e0e0;
 
         }
-
-        /* tu diseño centrado va dentro de este */
-.cv-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  margin: 20px auto 0;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  background-image: url('https://www.transparenttextures.com/patterns/subtle-white-feathers.png');
-  background-repeat: repeat;
-}
+       .cv-container {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background-image: url('https://www.transparenttextures.com/patterns/subtle-white-feathers.png');
+            background-repeat: repeat;
+        }
+      
 
         .header {
             padding: 20px;
@@ -202,7 +197,7 @@ body {
 
         .section-title {
             color: #000000;
-            font-size: 21px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
             text-transform: uppercase;

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <link rel="manifest" href="./manifest.json">
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CV Ronald U.">
+
+    <!-- Chrome for Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Cache control -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, immutable">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fuente web Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Metaetiquetas descriptivas -->
+    <meta name="Description"
+        content="Curriculum Vitae de Ronald Urbano Chávez. Profesional de Computación e Informática con experiencia en desarrollo de software, programación y soporte técnico." />
+    <meta name="keywords"
+        content="Ronald Urbano Chávez, CV, curriculum vitae, computación, informática, desarrollo, programación, Java, SQL Server, Android, Kotlin, GitHub">
+    <meta name="author" content="Ronald Urbano Chávez">
+
+    <!-- Open Graph meta tags para compartir en redes sociales -->
+    <meta property="og:title" content="CV - Ronald Urbano Chávez | Computación e Informática" />
+    <meta property="og:description"
+        content="Egresado de Computación e Informática con competencias en desarrollo de software, programación, soporte técnico y configuración de sistemas." />
+    <meta property="og:image" content="/img/ronald_cv.png" />
+    <meta property="og:url" content="https://ronalk35.github.io/cv/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="CV Ronald Urbano Chávez" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <title>CV. - Ronald Urbano Chávez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+        }
+
+        .name,
+        h1,
+        h2,
+        h3,
+        .job-title,
+        .section-title {
+            font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.01em;
+        }
+
+        body {
+            background-color: #0f172a;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+
+        body::-webkit-scrollbar {
+            width: 12px;
+            /* Ancho del scroll */
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #e0e0e0;
+
+            border-radius: 5px;
+
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #0f172a;
+
+            border-radius: 5px;
+
+            border: 2px solid #e0e0e0;
+
+        }
+
+        .cv-container {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background-image: url('https://www.transparenttextures.com/patterns/subtle-white-feathers.png');
+            background-repeat: repeat;
+        }
+
+        .header {
+            padding: 20px;
+            position: relative;
+
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+
+            right: 20px;
+
+            height: 2px;
+            background-color: #e2e8f0;
+        }
+
+        .profile-img {
+            position: absolute;
+            right: 17px;
+            top: 20px;
+            width: 100px;
+            height: auto;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+
+        .divider {
+            border-top: 2px solid #244061;
+            margin: 10px 0;
+        }
+
+        /* Estilos para la información de contacto en 2 columnas */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 30px;
+        }
+
+        .contact-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 48%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            color: #3b82f6;
+            font-size: 18px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .section {
+            padding: 15px 50px;
+            position: relative;
+        }
+
+        .section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background-color: #e2e8f0;
+        }
+
+        .section.last::after {
+            display: none;
+        }
+
+        .section-title {
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+        }
+
+        .section-content {
+            display: inline-block;
+            width: 74%;
+            vertical-align: top;
+        }
+
+        .job-title {
+            color: #244061;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .company {
+            color: #3b82f6;
+            font-style: italic;
+        }
+
+        .date {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #244061;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .blue-text {
+            color: #3b82f6;
+        }
+
+
+        .experience-section {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            margin-bottom: 5px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            color: white;
+            padding: 8px 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 10px;
+            background: #0056b3;
+            border: 1px solid #0056b3;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease-in;
+            margin: 15px 0;
+        }
+
+        .back-to-top:active {
+            color: #e0e0e0;
+            box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.2), inset -4px -4px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .back-to-top:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .back-to-top:after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+            background-color: #00bfff;
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .back-to-top:hover {
+            color: #ffffff;
+            border: 1px solid #00bfff;
+        }
+
+        .back-to-top:hover:before {
+            top: -35%;
+            background-color: #00bfff;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        .back-to-top:hover:after {
+            top: -45%;
+            background-color: #00bfff;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        .back-icon {
+            margin-right: 5px;
+        }
+
+        .section-title-1 {
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            margin-top: 6px;
+        }
+
+        .section-title-2 {
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+
+        .section-title-3 {
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 25%;
+            vertical-align: top;
+            margin-top: 8px;
+        }
+
+
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .profile-img {
+                position: relative;
+                display: block;
+                margin: 0 auto 15px;
+                right: auto;
+                top: auto;
+            }
+
+            .name,
+            .subtitle {
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-column {
+                width: 100%;
+            }
+
+            .section-title,
+            .section-title-1,
+            .section-title-2,
+            .section-title-3,
+            .section-content {
+                width: 100%;
+                display: block;
+            }
+
+            .section-title,
+            .section-title-1,
+            .section-title-2,
+            .section-title-3 {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 10px 25px;
+            }
+
+            .contact-info {
+                margin: 15px 10px;
+            }
+
+            .back-to-top {
+                padding: 10px 16px;
+                font-size: 14px;
+                border-radius: 8px;
+            }
+
+            .back-icon {
+                font-size: 16px;
+            }
+        }
+
+        .color-toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #0056b3;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .color-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .color-toggle-btn svg {
+            color: #fff;
+        }
+
+        .cv-container {
+            position: relative;
+
+        }
+
+        @media (max-width: 480px) {
+            .color-toggle-btn {
+                width: 36px;
+                height: 36px;
+                top: 20px;
+                right: 20px;
+            }
+
+            .color-toggle-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    </style>
+    <button id="toggleColorBtn" class="color-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </svg>
+    </button>
+</head>
+
+<body>
+    <div class="cv-container">
+        <!-- Header Section -->
+        <div class="header">
+            <br />
+            <img src="/assets/img/ronald_cv.png" alt="Ronald Urbano Chávez" class="profile-img" />
+            <div class="divider"></div>
+            <h1 class="name">RONALD URBANO CHÁVEZ</h1>
+            <p class="subtitle">Egresado de Computación e Informática</p>
+            <div class="divider"></div>
+
+            <!-- Información de contacto en dos columnas -->
+            <div class="contact-info">
+                <!-- Columna izquierda -->
+                <div class="contact-column">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Calle Luis Enrique Galván 102 - Pueblo Libre</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📩</span>
+                        <span>sam.ronaldurbano@gmail.com</span>
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div class="contact-column">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>(+51) 972 512 362</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🔗</span>
+                        <span>linkedin.com/in/ronaldurbanochavez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="section">
+            <p>
+                Soy egresado de la carrera de Computación e Informática en el
+                <span class="blue-text">Instituto Cibertec</span> con sólidas
+                competencias técnicas en desarrollo de software, programación, soporte
+                técnico y configuración de sistemas. Durante mi formación adquirí un
+                profundo conocimiento teórico y práctico en temas clave de la
+                informática, participando activamente en proyectos que fortalecieron
+                mis competencias técnicas y mi comprensión de conceptos fundamentales.
+            </p>
+            <br />
+            <p>
+                Ahora, como profesional, mi objetivo es aplicar y expandir estos
+                conocimientos en una empresa sólida y competitiva, contribuyendo al
+                éxito de proyectos tecnológicos innovadores y desafiantes.
+            </p>
+        </div>
+
+        <!-- Experience Section - Updated to match image format -->
+        <div class="section">
+            <h2 class="section-title">Experiencia Laboral</h2>
+            <div class="section-content">
+                <div class="experience-section">
+                    <div class="job-header">
+                        <h3 class="job-title">ESPECIALISTA DE VENTAS | SAMSUNG</h3>
+                        <p class="company">
+                            <strong>Overall Strategy, Septiembre/2017 - Febrero/2018
+                            </strong>
+                        </p>
+                        <p class="company"><strong>Overall Strategy, Abril/2010 - Marzo/2013</strong></p>
+                    </div>
+
+                    <ul>
+                        <li>
+                            Gestión y promoción de ventas en puntos de venta estratégicos.
+                        </li>
+                        <li>
+                            Diagnostiqué problemas técnicos y proporcioné soluciones
+                            inmediatas para problemas de configuración.
+                        </li>
+                        <li>
+                            Análisis de ventas y elaboración de informes detallados en
+                            Microsoft Excel.
+                        </li>
+                        <li>
+                            Excelencia en atención al cliente para garantizar una
+                            experiencia satisfactoria.
+                        </li>
+                        <li>
+                            Brindé soporte técnico para la configuración y resolución de
+                            problemas en dispositivos electrónicos (Smart TV, equipos de
+                            sonido).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <div class="job-header">
+                        <h3 class="job-title">ESPECIALISTA DE VENTAS | LG</h3>
+                        <p class="company"><strong>GEPAE, Abril/2014 - Febrero/2015</strong></p>
+                    </div>
+
+                    <ul>
+                        <li>Promoción de Ventas de Electrodomésticos (Línea Blanca).</li>
+                        <li>
+                            Gestioné el inventario para asegurar la disponibilidad de
+                            productos y optimizar la atención al cliente.
+                        </li>
+                        <li>
+                            Elaboré informes virtuales para el seguimiento y análisis de
+                            ventas en Microsoft Excel.
+                        </li>
+                        <li>
+                            Proporcioné soporte técnico básico para electrodomésticos,
+                            incluyendo diagnóstico inicial de problemas.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section - Updated to match image format -->
+        <div class="section">
+            <h2 class="section-title">Formación académica</h2>
+            <div class="section-content">
+                <div class="experience-section">
+                    <div class="job-header">
+                        <h3 class="job-title">
+                            EGRESADO EN COMPUTACIÓN E INFORMATICA (JULIO -2024)
+                        </h3>
+                        <p class="company"><strong>Instituto Superior Privado Cibertec</strong></p>
+                    </div>
+
+                    <ul>
+                        <li>
+                            <strong>CERTIFICADO MODULAR:</strong> Fundamentos de
+                            Programación y Tecnologías de la Información.
+                        </li>
+                        <li>
+                            <strong>CERTIFICADO MODULAR:</strong> Desarrollo de Software y
+                            Gestión de Datos.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills Section - Updated to match image format -->
+        <div class="section">
+            <h2 class="section-title-1">Competencias Técnicas</h2>
+            <div class="section-content">
+                <ul>
+                    <li>
+                        <strong>MICROSOFT OFFICE 365</strong> | Dominio de Excel para
+                        análisis de datos y reportes, Power Point para presentaciones
+                        técnicas, Word para documentación.
+                    </li>
+                    <li>
+                        <strong>SQL SERVER 2019 (INTERMEDIO)</strong> | Gestión y consulta
+                        de bases de datos, optimización de rendimiento.
+                    </li>
+                    <li>
+                        <strong>PROGRAMACIÓN EN JAVA (INTERMEDIO)</strong> | Desarrollo de
+                        aplicaciones, programación orientada a objetos.
+                    </li>
+                    <li>
+                        <strong>ANDROID - KOTLIN (BÁSICO)</strong> | Desarrollo de
+                        aplicaciones móviles en Android Studio.
+                    </li>
+                    <li>
+                        <strong>GITHUB</strong> | Control de versiones y colaboración en
+                        proyectos.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional Training Section - Updated to match image format -->
+        <div class="section">
+            <h2 class="section-title-2">Formación complementaria</h2>
+            <div class="section-content">
+                <ul>
+                    <li>
+                        Certificado de Programa de Liderazgo y Habilidades Ejecutivas
+                        (UPC).
+                    </li>
+                    <li>
+                        Certificado Conceptos Básicos de Hardware de Computadoras
+                        (MINISTERIO DE TRABAJO Y PROMOCIÓN DEL EMPLEO, CISCO NETWORKING
+                        ACADEMY).
+                    </li>
+                    <li>Certificado Fundamentos de Python (NETZUN).</li>
+                    <li>Certificado de Python Intermedio (NETZUN).</li>
+                    <li>
+                        Certificado Fundamentos de Python l (MINISTERIO DE TRABAJO Y
+                        PROMOCIÓN DEL EMPLEO, CISCO NETWORKING ACADEMY).
+                    </li>
+                    <li>
+                        Certificado Databricks Lakehouse Fundamentals (ACADEMY
+                        ACCREDITATION – DATABRICKS).
+                    </li>
+                    <li>
+                        Certificado Databricks Fundamentals (ACADEMY ACCREDITATION –
+                        DATABRICKS).
+                    </li>
+                    <li>
+                        Certificado Office Intermedio (Fundación Telefónica Movistar).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Languages Section - Updated to match image format -->
+        <div class="section">
+            <h2 class="section-title-3">Idiomas, Formación Continua</h2>
+            <div class="section-content">
+                <ul>
+                    <li>
+                        <strong>Programa de estudio Wetalk</strong> |
+                        <strong>CURSANDO</strong><br />
+                        UNIVERSIDAD CIENCIAS APLICADAS (UPC - WETALK) | ENGLISH IV (B1).
+                    </li>
+                    <li>
+                        <strong>Programa de Excel Profesional</strong> |
+                        <strong>ABRIL - 2025</strong><br />
+                        CÁMARA DE COMERCIO EXTERIOR (CCL) | BÁSICO - INTERMEDIO – AVANZADO
+                    </li>
+                    <li>
+                        <strong>Especialización en Ingeniería de Datos e AI con Azure</strong>
+                        | <strong>MARZO - 2025</strong><br />
+                        SMART DATA.
+                    </li>
+                    <li>
+                        <strong>Programa de Especialización POWER BI</strong> |
+                        <strong>DICIEMBRE - 2024</strong><br />
+                        COLEGIO DE INGENIEROS DEL PERÚ | BÁSICO - INTERMEDIO - AVANZADO
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section last" style="text-align: center; border-bottom: none;">
+        <a href="index.html" class="back-to-top">
+            <span class="back-icon">⬅️</span> Volver a inicio
+        </a>
+    </div>
+    </div>
+
+    <!-- Script para el cambio de color -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleColorBtn');
+            const cvContainer = document.querySelector('.cv-container');
+            const originalColor = '#ffffff';
+            const alternateColor = '#e9ecbb';
+            let isOriginalColor = true;
+
+            toggleBtn.addEventListener('click', function () {
+                if (isOriginalColor) {
+                    cvContainer.style.backgroundColor = alternateColor;
+                } else {
+                    cvContainer.style.backgroundColor = originalColor;
+                }
+                isOriginalColor = !isOriginalColor;
+            });
+        });
+    </script>
+    <!-- Script para el cambio de color fin -->
+
+</body>
+
+</html>

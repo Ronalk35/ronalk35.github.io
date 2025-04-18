@@ -379,38 +379,39 @@
 	  :root {
             --theme-color: #1e213d;
         }
-          html {
+
+        html {
             background-color: var(--theme-color);
             color-scheme: light dark;
         }
 
-     /* Estilo específico para modo oscuro */
-         @media (prefers-color-scheme: dark) {
-        :root {
-             --theme-color: #1e213d; 
+        /* Estilo específico para modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme-color: #1e213d;
+            }
+
+            html {
+                background-color: var(--theme-color);
+            }
         }
-  
-         html {
-         background-color: var(--theme-color);
-       }
-    }
 
-/* Propiedad personalizada para Chrome en Android */
-         @property --theme-ui-bg {
-         syntax: "<color>";
-         inherits: true;
-         initial-value: #1e213d;
-    }
+        /* Propiedad personalizada para Chrome en Android */
+        @property --theme-ui-bg {
+            syntax: "<color>";
+            inherits: true;
+            initial-value: #1e213d;
+        }
 
         :root {
-        --theme-ui-bg: #1e213d;
-    }
+            --theme-ui-bg: #1e213d;
+        }
 
         body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--theme-ui-bg);
-    }
+            margin: 0;
+            padding: 0;
+            background-color: var(--theme-ui-bg);
+        }
        
 
 

@@ -377,10 +377,9 @@
             margin-top: 8px;
         }
 
-
-	 /* ===============================
-   Variables base (modo claro)
-=============================== */
+         /* ===============================
+           Variables base (modo claro)
+            =============================== */
 :root {
   --theme-color: #1e213d;
   --page-bg: #0f172a;
@@ -396,7 +395,19 @@ html {
 
 body {
   background-color: var(--page-bg);
-  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   Media query para escritorio - hacer que HTML tenga el mismo color que body
+=============================== */
+@media (min-width: 1024px) {
+  html {
+    background-color: var(--page-bg);
+  }
 }
 
 /* ===============================
@@ -407,6 +418,7 @@ body {
   inherits: true;
   initial-value: #1e213d;
 }
+	
        
 
 

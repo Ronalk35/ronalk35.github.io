@@ -377,51 +377,48 @@
             margin-top: 8px;
         }
 
-         /* ===============================
-           Variables base (modo claro)
+           /* ===============================
+            Variables base (modo claro)
             =============================== */
-:root {
-  --theme-color: #1e213d;
-  --page-bg: #0f172a;
-}
+         :root {
+            --theme-color: #1e213d;
+            --page-bg: #0f172a;
+        }
 
-/* ===============================
-   Estilos base para ambos modos
-=============================== */
-html {
-  background-color: var(--theme-color);
-  color-scheme: dark light;
-}
+           /* ===============================
+            Estilos base para ambos modos
+            =============================== */
+         html {
+             background-color: var(--theme-color);
+             color-scheme: dark light;
+        }
 
-body {
-  background-color: var(--page-bg);
-  line-height: 1.6;
-  padding: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+         body {
+             background-color: var(--page-bg);
+             line-height: 1.6;
+             padding: 20px;
+             max-width: 1000px;
+             margin: 0 auto;
+        }
 
-/* ===============================
-   Media query para escritorio - hacer que HTML tenga el mismo color que body
-=============================== */
-@media (min-width: 1024px) {
-  html {
-    background-color: var(--page-bg);
-  }
-}
+          /* ===============================
+           Media query para escritorio
+           =============================== */
+          @media (min-width: 1024px) {
+         html {
+             background-color: var(--page-bg);
+         }
+      }
 
-/* ===============================
-   Chrome Android: propiedad registrada
-=============================== */
-@property --theme-ui-bg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #1e213d;
-}
+         /* ===============================
+          Chrome Android: propiedad registrada
+         =============================== */
+          @property --theme-ui-bg {
+            syntax: "<color>";
+            inherits: true;
+            initial-value: #1e213d;
+      }
 	
-       
-
-
         /* Responsiveness */
         @media (max-width: 768px) {
             .profile-img {
@@ -462,7 +459,7 @@ body {
                 margin-bottom: 10px;
             }
 	    .back-to-top {
-                margin-bottom: 40px;
+                margin-bottom: 10px;
             }
         }
 

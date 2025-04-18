@@ -382,30 +382,17 @@
 =============================== */
 :root {
   --theme-color: #1e213d;      
-  --theme-ui-bg: #1e213d;      
+  --theme-ui-bg: #1e213d;
+  --page-bg: #0f172a;
 }
 
 /* ===============================
    Estilos base para ambos modos
 =============================== */
 html, body {
-  background-color: var(--theme-color);
+  background-color: var(--page-bg);
   color: var(--text-color);
   color-scheme: dark light;    
-}
-
-/* ===============================
-   Modo oscuro
-=============================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme-color: #0f172a;    
-    --theme-ui-bg: #0f172a;
-  }
-
-  html, body {
-    background-color: var(--theme-color);
-  }
 }
 
 /* ===============================

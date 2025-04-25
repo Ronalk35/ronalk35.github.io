@@ -19,7 +19,7 @@ function initializeAnimation() {
     existingCanvas.remove();
   }
 
-  // Crear nuevo canvas
+  
   originalCanvas = document.createElement("canvas");
   originalCanvas.id = "laptop-canvas";
 

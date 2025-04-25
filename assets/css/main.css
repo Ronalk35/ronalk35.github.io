@@ -5,7 +5,7 @@
 	This is HTML5 template
 	Template Name : Portafolio
 	Version: 1.1
-  Obs: plantilla 1.0 se mantiene, se agrego bootstrap y animaciones, se quito tema claro icono de luna se mejorara el tema claro en 3 meses 17-06-2025
+  Obs: plantilla 1.0 se mantiene, se agrego bootstrap y animaciones, se quito tema claro icono de luna se mejorará el tema claro en 3 meses 17-06-2025
 	
 ****************************************
 =======================================/
@@ -2502,5 +2502,56 @@ footer-1 h3:hover {
 /* ==========================================================================
 *. Terminal-Skills Fin
 ========================================================================== */
+
+/* ==========================================================================
+*. Laptop Animation
+========================================================================== */
+.laptop-animation-section {
+  padding: 10px 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.canvas-wrapper {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+#laptop-canvas {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991px) {
+  .canvas-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .canvas-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  .laptop-animation-section {
+    padding: 20px 0;
+  }
+}
+/* ==========================================================================
+*. Laptop Animation Fin
+========================================================================== */
+
 
 

@@ -1,62 +1,69 @@
 // Crear elementos del modal
 function createModalElements() {
-    // Contenedor principal del modal
-    const modalContainer = document.createElement('div');
-    modalContainer.id = 'imageModal';
-    modalContainer.className = 'modal-container';
-    
-    // Contenido del modal
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content rotate-scale-down';
-    
-    // Botón de cierre
-    const closeButton = document.createElement('span');
-    closeButton.className = 'close-button';
-    closeButton.innerHTML = '&times;';
-    
-    // Imagen dentro del modal
-    const modalImage = document.createElement('img');
-    modalImage.id = 'modalImage';
-    modalImage.className = 'modal-image';
-    
-    // Información del proyecto
-    const projectInfo = document.createElement('div');
-    projectInfo.className = 'project-info';
-    
-    // Título del proyecto
-    const projectTitle = document.createElement('h3');
-    projectTitle.id = 'modalTitle';
-    
-    // Descripción del proyecto
-    const projectDescription = document.createElement('p');
-    projectDescription.id = 'modalDescription';
-    
-    // Enlace al proyecto
-    const projectLink = document.createElement('a');
-    projectLink.id = 'modalLink';
-    projectLink.className = 'btn blog_btn btn-secondary';
-    projectLink.target = '_blank';
-    projectLink.textContent = 'Revisar Proyecto';
-    
-    // Armar estructura del modal
-    projectInfo.appendChild(projectTitle);
-    projectInfo.appendChild(projectDescription);
-    projectInfo.appendChild(projectLink);
-    
-    modalContent.appendChild(closeButton);
-    modalContent.appendChild(modalImage);
-    modalContent.appendChild(projectInfo);
-    
-    modalContainer.appendChild(modalContent);
-    
-    return modalContainer;
-  }
-  
-  // Agregar estilos CSS
-  function addModalStyles() {
-    const styleSheet = document.createElement('style');
-    styleSheet.type = 'text/css';
-    styleSheet.innerHTML = `
+  // Contenedor principal del modal
+  const modalContainer = document.createElement("div");
+  modalContainer.id = "imageModal";
+  modalContainer.className = "modal-container";
+
+  // Contenido del modal
+  const modalContent = document.createElement("div");
+  modalContent.className = "modal-content rotate-scale-down";
+
+  // Botón de cierre
+  const closeButton = document.createElement("span");
+  closeButton.className = "close-button";
+  closeButton.innerHTML = "&times;";
+
+  // Imagen dentro del modal
+  const modalImage = document.createElement("img");
+  modalImage.id = "modalImage";
+  modalImage.className = "modal-image";
+
+  // Información del proyecto
+  const projectInfo = document.createElement("div");
+  projectInfo.className = "project-info";
+
+  // Título del proyecto
+  const projectTitle = document.createElement("h3");
+  projectTitle.id = "modalTitle";
+
+  // Descripción del proyecto
+  const projectDescription = document.createElement("p");
+  projectDescription.id = "modalDescription";
+
+  // Contenedor para las etiquetas de tecnologías
+  const techTagsContainer = document.createElement("div");
+  techTagsContainer.id = "modalTechTags";
+  techTagsContainer.className = "tech-tags";
+
+  // Enlace al proyecto
+  const projectLink = document.createElement("a");
+  projectLink.id = "modalLink";
+  projectLink.className = "btn blog_btn btn-secondary";
+  projectLink.target = "_blank";
+  projectLink.innerHTML =
+    '<i class="fa-solid fa-laptop"></i> &nbsp;Revisar Proyecto';
+
+  // Armar estructura del modal
+  projectInfo.appendChild(projectTitle);
+  projectInfo.appendChild(projectDescription);
+  projectInfo.appendChild(techTagsContainer);
+  projectInfo.appendChild(projectLink);
+
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(modalImage);
+  modalContent.appendChild(projectInfo);
+
+  modalContainer.appendChild(modalContent);
+
+  return modalContainer;
+}
+
+// Agregar estilos CSS
+function addModalStyles() {
+  const styleSheet = document.createElement("style");
+  styleSheet.type = "text/css";
+  styleSheet.innerHTML = `
       .modal-container {
         display: none;
         position: fixed;
@@ -94,9 +101,7 @@ function createModalElements() {
         cursor: pointer;
         z-index: 10;
         transition: color 0.3s;
-      }
-      
-      .close-button:hover {
+      } .close-button:hover {
         color: red;
       }
       
@@ -122,6 +127,13 @@ function createModalElements() {
         margin-bottom: 15px;
         color: #fff;
       }
+      /* Estilos para las etiquetas de tecnología en el modal */
+    #modalTechTags {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
       
       /* Animación rotate-scale-down */
       @keyframes rotate-scale-down {
@@ -138,6 +150,20 @@ function createModalElements() {
       .rotate-scale-down {
         animation: rotate-scale-down 0.4s ease-out;
       }
+
+/* Animación rotate-scale-up (cierre) */
+    @keyframes rotate-scale-up {
+      0% {
+        transform: scale(1) rotateZ(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0) rotateZ(180deg);
+        opacity: 0;
+      }
+    } .rotate-scale-up {
+      animation: rotate-scale-up 0.4s ease-out forwards;
+    }
       
       /* Estilos responsivos */
       @media screen and (max-width: 768px) {
@@ -149,6 +175,10 @@ function createModalElements() {
         .modal-image {
           max-height: 50vh;
         }
+
+        #modalTechTags {
+        margin-bottom: 15px;
+      }
       }
       
       @media screen and (max-width: 480px) {
@@ -163,124 +193,160 @@ function createModalElements() {
         }
 
         .project-info h3 {
-    font-size: 18px; 
-  }
+    font-size: 18px;
+   }
+    #modalTechTags {
+        margin-bottom: 16px;
+        gap: 6px;
+      }
       }
     `;
-    document.head.appendChild(styleSheet);
-  }
-  
-  // Función principal para inicializar el modal
-  function initImageModal() {
-    // Agregar elementos del modal al DOM
-    const modalElement = createModalElements();
-    document.body.appendChild(modalElement);
-    
-    // Agregar estilos CSS
-    addModalStyles();
-    
-    // Obtener todos los contenedores de imágenes de proyectos
-    const projectImages = document.querySelectorAll('.blog-image a');
-    
-    // Modal y elementos relacionados
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close-button');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalLink = document.getElementById('modalLink');
-    
-    // Agregar event listeners a cada imagen
-    projectImages.forEach(imageLink => {
-      imageLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Obtener la imagen y su información
-        const img = this.querySelector('img');
-        const blogInfo = this.closest('.blog-thumb').querySelector('.blog-info');
-        const title = blogInfo.querySelector('h4').textContent;
-        const description = blogInfo.querySelector('p').textContent;
-        const projectLink = blogInfo.querySelector('.btn').getAttribute('href');
-        
-        // Actualizar el modal con la información del proyecto
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        modalTitle.textContent = title;
-        modalDescription.textContent = description;
-        modalLink.href = projectLink;
-        
-        // Mostrar el modal
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Evitar scroll del body
-      });
+  document.head.appendChild(styleSheet);
+}
+
+// Función principal para inicializar el modal
+function initImageModal() {
+  // Agregar elementos del modal al DOM
+  const modalElement = createModalElements();
+  document.body.appendChild(modalElement);
+
+  // Agregar estilos CSS
+  addModalStyles();
+
+  // Obtener todos los contenedores de imágenes de proyectos
+  const projectImages = document.querySelectorAll(".blog-image a");
+
+  // Modal y elementos relacionados
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close-button");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalLink = document.getElementById("modalLink");
+  const modalTechTags = document.getElementById("modalTechTags");
+  const modalContent = document.querySelector(".modal-content");
+
+  // Agregar event listeners a cada imagen
+  projectImages.forEach((imageLink) => {
+    imageLink.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Obtener la imagen y su información
+      const img = this.querySelector("img");
+      const blogInfo = this.closest(".blog-thumb").querySelector(".blog-info");
+      const title = blogInfo.querySelector("h4").textContent;
+      const description = blogInfo.querySelector("p").textContent;
+      const projectLink = blogInfo.querySelector(".btn").getAttribute("href");
+      const techTags = blogInfo.querySelector(".tech-tags");
+
+      // Asegurarse de que no tenga la clase de cierre y tenga la clase de apertura
+      modalContent.classList.remove("rotate-scale-up");
+      modalContent.classList.add("rotate-scale-down");
+
+      // Actualizar el modal con la información del proyecto
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      modalLink.href = projectLink;
+
+      // Limpiar y actualizar las etiquetas de tecnología
+      modalTechTags.innerHTML = techTags ? techTags.innerHTML : "";
+
+      // Mostrar el modal
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden"; // Evitar scroll del body
     });
-    
-    // Cerrar modal al hacer clic en el botón X
-    closeBtn.addEventListener('click', function() {
+  });
+
+  // Cerrar modal al hacer clic en el botón X
+  closeBtn.addEventListener("click", function () {
+    closeModal();
+  });
+
+  // Cerrar modal al hacer clic fuera de la imagen
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
       closeModal();
-    });
-    
-    // Cerrar modal al hacer clic fuera de la imagen
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-    
-    // Cerrar modal con la tecla ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.style.display === 'flex') {
-        closeModal();
-      }
-    });
-    
-    // Función para cerrar el modal
-    function closeModal() {
-      document.getElementById('imageModal').style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restaurar scroll del body
     }
-    
-    // Observer para detectar nuevos proyectos agregados dinámicamente
-    const observerConfig = { childList: true, subtree: true };
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-          // Verificar si se agregaron nuevos proyectos
-          const newProjectImages = document.querySelectorAll('.blog-image a:not([data-modal-initialized])');
-          
-          if (newProjectImages.length > 0) {
-            // Agregar event listeners a las nuevas imágenes
-            newProjectImages.forEach(imageLink => {
-              imageLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const img = this.querySelector('img');
-                const blogInfo = this.closest('.blog-thumb').querySelector('.blog-info');
-                const title = blogInfo.querySelector('h4').textContent;
-                const description = blogInfo.querySelector('p').textContent;
-                const projectLink = blogInfo.querySelector('.btn').getAttribute('href');
-                
-                modalImg.src = img.src;
-                modalImg.alt = img.alt;
-                modalTitle.textContent = title;
-                modalDescription.textContent = description;
-                modalLink.href = projectLink;
-                
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-              });
-              
-              // Marcar como inicializado
-              imageLink.setAttribute('data-modal-initialized', 'true');
-            });
-          }
-        }
-      });
-    });
-    
-    // Iniciar observación del contenedor de proyectos
-    observer.observe(document.querySelector('.blog-area'), observerConfig);
+  });
+
+  // Cerrar modal con la tecla ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.style.display === "flex") {
+      closeModal();
+    }
+  });
+
+  // Función para cerrar el modal
+  function closeModal() {
+    const modalContent = document.querySelector(".modal-content");
+
+    // Aplicar la animación de cierre
+    modalContent.classList.remove("rotate-scale-down");
+    modalContent.classList.add("rotate-scale-up");
+
+    // Esperar a que termine la animación antes de ocultar el modal
+    setTimeout(() => {
+      document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = "auto"; // Restaurar scroll del body
+    }, 350); // Tiempo ligeramente menor que la duración de la animación
   }
-  
-  // Inicializar el modal cuando el DOM esté completamente cargado
-  document.addEventListener('DOMContentLoaded', initImageModal);
+
+  // Observer para detectar nuevos proyectos agregados dinámicamente
+  const observerConfig = { childList: true, subtree: true };
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+        // Verificar si se agregaron nuevos proyectos
+        const newProjectImages = document.querySelectorAll(
+          ".blog-image a:not([data-modal-initialized])"
+        );
+
+        if (newProjectImages.length > 0) {
+          // Agregar event listeners a las nuevas imágenes
+          newProjectImages.forEach((imageLink) => {
+            imageLink.addEventListener("click", function (e) {
+              e.preventDefault();
+
+              const img = this.querySelector("img");
+              const blogInfo =
+                this.closest(".blog-thumb").querySelector(".blog-info");
+              const title = blogInfo.querySelector("h4").textContent;
+              const description = blogInfo.querySelector("p").textContent;
+              const projectLink = blogInfo
+                .querySelector(".btn")
+                .getAttribute("href");
+              const techTags = blogInfo.querySelector(".tech-tags");
+
+              // Asegurarse de que no tenga la clase de cierre y tenga la clase de apertura
+              modalContent.classList.remove("rotate-scale-up");
+              modalContent.classList.add("rotate-scale-down");
+
+              modalImg.src = img.src;
+              modalImg.alt = img.alt;
+              modalTitle.textContent = title;
+              modalDescription.textContent = description;
+              modalLink.href = projectLink;
+
+              // Limpiar y actualizar las etiquetas de tecnología
+              modalTechTags.innerHTML = techTags ? techTags.innerHTML : "";
+
+              modal.style.display = "flex";
+              document.body.style.overflow = "hidden";
+            });
+
+            // Marcar como inicializado
+            imageLink.setAttribute("data-modal-initialized", "true");
+          });
+        }
+      }
+    });
+  });
+
+  // Iniciar observación del contenedor de proyectos
+  observer.observe(document.querySelector(".blog-area"), observerConfig);
+}
+
+// Inicializar el modal cuando el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", initImageModal);

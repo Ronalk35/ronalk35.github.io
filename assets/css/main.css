@@ -765,10 +765,20 @@ a.back-to-top:focus {
   margin-top: 180px;
   margin-left: 180px;
   max-width: 126%;
+  animation: float 3s ease-in-out infinite;
   /* Agregue tamaño */
 }
 .banner-images {
   width: 300px;
+}
+/* Animación de flotación suave */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ==========================================================================

@@ -225,7 +225,7 @@ ol li {
   width: 60%;
   height: 100%;
   z-index: -1;
-  background: #1d2537;
+  background: #000a1f;
   -webkit-transition: 0.9s;
   transition: 0.9s;
 }

@@ -2775,6 +2775,20 @@ footer-1 h3:hover {
 /* ==========================================================================
 *. Saludo Fin
 ========================================================================== */
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
 
+
+@media (max-width: 768px) {
+  a.zoom-animate > img {
+    animation: zoomInOut 2s ease-in-out infinite;
+  }
+}
 
 

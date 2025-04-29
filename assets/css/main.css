@@ -55,7 +55,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #0f172a; /* Color del scroll (personalízalo) */
+  background-color: #000a1f; /* Color del scroll (personalízalo) */
   border-radius: 5px; /* Bordes redondeados */
   border: 2px solid #e0e0e0; /* Espacio entre el scroll y el fondo */
 }
@@ -142,7 +142,7 @@ ol li {
   background: #fcfcfc;
 }
 .dark_bg {
-  background: #0f172a;
+  background: #000a1f;
 }
 /*START PRELOADER DESIGN*/
 .preloader {
@@ -682,12 +682,12 @@ a.back-to-top:focus {
   -webkit-backface-visibility: hidden; /* Compatibilidad con navegadores antiguos */
   backface-visibility: hidden;
   border-radius: 0px;
-  background-color: #0f172a;
+  background-color: #000a1f;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 768px) {
   .navbar-fixed {
-    background: #0f172a;
+    background: #000a1f;
   }
   .navbar-fixed.navbar-light .navbar-nav .nav-link {
     color: #333;
@@ -2003,7 +2003,7 @@ body {
 
 .tech-icons-slider {
   overflow: hidden;
-  background: #0f172a; 
+  background: #000a1f; 
   position: relative; 
   padding: 20px 0;
 }

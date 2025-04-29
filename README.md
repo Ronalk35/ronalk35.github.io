@@ -70,3 +70,11 @@ El portafolio muestra proyectos en las siguientes áreas:
 - Diseño del Portafolio:
 
 ![Vista previa del portafolio](assets/img/portafolio_ronald.png)
+
+---
+
+## Puntuación
+
+- LightHouse:
+
+![Vista previa del portafolio](assets/img/P_Lighthouse.png)

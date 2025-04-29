@@ -20,9 +20,11 @@ async function initVisitorCounter() {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     
-    // Obtener el elemento del contador
+    // Obtener los elementos del contador (desktop y móvil)
     const visitorCountElement = document.getElementById('visitas-numero');
-    if (!visitorCountElement) return;
+    const mobileVisitorCountElement = document.getElementById('mobile-visitas-numero');
+    
+    if (!visitorCountElement && !mobileVisitorCountElement) return;
     
     // Referencia al documento del contador
     const counterRef = doc(db, "counters", "visitorCount");
@@ -32,16 +34,27 @@ async function initVisitorCounter() {
     
     if (docSnap.exists()) {
       const currentCount = docSnap.data().count;
-      visitorCountElement.innerText = currentCount;
+      
+      // Actualizar ambos contadores
+      if (visitorCountElement) visitorCountElement.innerText = currentCount;
+      if (mobileVisitorCountElement) mobileVisitorCountElement.innerText = currentCount;
+      
       await updateDoc(counterRef, { count: increment(1) });
     } else {
-      visitorCountElement.innerText = "1";
+      // Inicializar contador en 1
+      if (visitorCountElement) visitorCountElement.innerText = "1";
+      if (mobileVisitorCountElement) mobileVisitorCountElement.innerText = "1";
+      
       await setDoc(counterRef, { count: 1 });
     }
   } catch (error) {
     console.error("Error con el contador de visitas:", error);
+    
     const visitorCountElement = document.getElementById('visitas-numero');
+    const mobileVisitorCountElement = document.getElementById('mobile-visitas-numero');
+    
     if (visitorCountElement) visitorCountElement.innerText = "-";
+    if (mobileVisitorCountElement) mobileVisitorCountElement.innerText = "-";
   }
 }
 

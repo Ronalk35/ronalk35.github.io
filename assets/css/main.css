@@ -2870,5 +2870,71 @@ footer-1 h3:hover {
     animation: zoomInOut 2s ease-in-out infinite;
   }
 }
+/* ==========================================================================
+*. Icono modal profile
+========================================================================== */
+@media (max-width: 991px) {
+  .fa-laptop-code {
+    color: #00bfff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+  }
+
+  .fa-laptop-code:hover {
+    transform: scale(1.2);
+    color: #33ccff;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .fa-laptop-code {
+    color: #00bfff;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse 2s infinite;
+    position: relative;
+  }
+
+  .fa-laptop-code:hover {
+    transform: scale(1.2);
+    color: #33ccff;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+/* ==========================================================================
+*. Icono modal profile Fin
+========================================================================== */
 
 

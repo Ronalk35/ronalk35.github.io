@@ -2950,7 +2950,8 @@ footer-1 h3:hover {
 
 input::placeholder,
 textarea::placeholder {
-  color: #bfbfbf !important;
+  color: #cccccc !important;
+  opacity: 1;
 }
 
 

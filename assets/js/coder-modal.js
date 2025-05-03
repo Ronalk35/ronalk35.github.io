@@ -402,6 +402,6 @@ document.addEventListener("DOMContentLoaded", function () {
           enableNavigation(); // Activar la navegación
         }, 500); // Igual al tiempo de la animación fadeOut
       }
-    });
+    } ,{ passive: true});
   }
 });

@@ -1368,10 +1368,10 @@
 					}
 
 					// Listeners para eventos de scroll, resize y load
-					window.addEventListener("scroll", handleScroll);
-					window.addEventListener("resize", handleScroll);
-					window.addEventListener("touchmove", handleScroll); // Importante para móviles
-					window.addEventListener("load", handleScroll);
+					window.addEventListener("scroll", handleScroll, { passive: true });
+					window.addEventListener("resize", handleScroll, { passive: true });
+					window.addEventListener("touchmove", handleScroll, { passive: true }); // Importante para móviles
+					window.addEventListener("load", handleScroll, { passive: true });
 				});
 			</script>
 

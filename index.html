@@ -41,8 +41,16 @@
          <meta property="og:site_name" content="Portafolio Ronald Urbano" />
 
 	<title>Ronald Urbano Chávez - Portafolio</title>
+	<!-- Preconectar a los dominios de Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<!-- Fonts and CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800" rel="stylesheet">
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800&display=swap" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800&display=swap" media="print" onload="this.media='all'">
+	<!-- Fallback para navegadores que no soportan onload -->
+        <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300i,400,400i,500,600,700,800&display=swap">
+        </noscript>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
         <!-- Favicon/Icons for different devices -->

@@ -2948,28 +2948,10 @@ footer-1 h3:hover {
   border: 0;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #cccccc;
-  opacity: 1;
-}
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-  color: #cccccc;
-  opacity: 1;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #cccccc;
-  opacity: 1;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #cccccc;
-  opacity: 1;
+input::placeholder,
+textarea::placeholder {
+  color: #cccccc !important;
+  opacity: 1 !important;
 }
 
 

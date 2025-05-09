@@ -2954,5 +2954,114 @@ textarea::placeholder {
   opacity: 1 !important;
 }
 
+/* ==========================================================================
+*. botón de alternar tema
+========================================================================== */
+.theme-switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 1px;
+  background-color: #00bfff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.toggle:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.toggle:active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: all 300ms ease;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--moon {
+  transition-delay: 100ms;
+  color: #000a1f;
+}
+
+.icon--sun {
+  transform: scale(0);
+  color: #000;
+}
+
+/* Animación al hacer clic */
+#switch:checked + .icon--moon {
+  transform: rotate(180deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 100ms;
+  transform: scale(1) rotate(180deg);
+}
+
+/* Modo oscuro activado */
+.dark-mode .toggle {
+  background-color: #292929;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .toggle:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .toggle:active {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .icon--sun {
+  color: #ffca28;
+}
+
+.dark-mode .icon--moon {
+  color: #597bbd;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991px) {
+  .theme-switch-container {
+    margin: 10px -10px;
+  }
+}
+/* ==========================================================================
+*. botón de alternar tema
+========================================================================== */
+
 
 

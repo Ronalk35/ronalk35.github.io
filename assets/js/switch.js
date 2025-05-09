@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const darkBgMenuElements = document.querySelectorAll(".dark_bg_menu");
 
   // Definir rutas de imagen absolutas (desde la raíz del sitio)
-  const darkImagePath = "/assets/img/ronald_portafolio.png";
-  const lightImagePath = "/assets/img/ronald_portafolio_light.png";
+  const darkImagePath = "./assets/img/ronald_portafolio.png";
+  const lightImagePath = "./assets/img/ronald_portafolio_light.png";
 
   // Estado inicial - verificar si ya hay una preferencia guardada
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (profileImage) {
       // Añadimos un timestamp para evitar el caché
       const timestamp = new Date().getTime();
-      profileImage.src = `assets/img/ronald_portafolio.png?t=${timestamp}`;
+      profileImage.src = `./assets/img/ronald_portafolio.png?t=${timestamp}`;
       console.log("Imagen cambiada a tema oscuro:", profileImage.src);
     } else {
       console.error(
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (profileImage) {
       // Añadimos un timestamp para evitar el caché
       const timestamp = new Date().getTime();
-      profileImage.src = `assets/img/ronald_portafolio_light.png?t=${timestamp}`;
+      profileImage.src = `./assets/img/ronald_portafolio_light.png?t=${timestamp}`;
       console.log("Imagen cambiada a tema claro:", profileImage.src);
     } else {
       console.error(
@@ -164,4 +164,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Depuración
   console.log("Estado inicial:", localStorage.getItem("darkMode"));
 });
+
 

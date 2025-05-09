@@ -1909,42 +1909,291 @@ p.text-center {
 ========================================================================== */
 
 /* ==========================================================================
-*. Color barra de navegacion escritorio, android, ios
+*. Color barra de navegacion escritorio, android, ios, tema claro
 ========================================================================== */
 :root {
   --theme-color: #1e213d;
-}
-html {
-  background-color: var(--theme-color);
-  color-scheme: light dark;
-}
-
-/* Estilo específico para modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --theme-color: #1e213d; 
-  }
-  
-  html {
-    background-color: var(--theme-color);
-  }
-}
-
-/* Propiedad personalizada para Chrome en Android */
-@property --theme-ui-bg {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #1e213d;
-}
-
-:root {
   --theme-ui-bg: #1e213d;
+  --text-color: #ffffff;
+  --light-bg: #fef6e4;
+  --dark-bg: #1e213d;
+  --dark-accent-bg: #000a1f;
+  --light-text: #172c66;
 }
 
+html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--theme-ui-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos base para el tema oscuro (por defecto) */
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+}
+
+.dark_bg {
+  background-color: var(--dark-accent-bg);
+  transition: background-color 0.3s ease;
+}
+
+.dark_bg_menu {
+  background-color: var(--dark-accent-bg) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para el tema claro */
+body.light {
+  background-color: var(--light-bg) !important;
+  color: var(--light-text) !important;
+}
+
+.light .dark_bg {
+  background-color: var(--light-bg) !important;
+}
+
+.light p,
+.light div {
+  color: var(--light-text) !important;
+}
+
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6,
+.light a,
+.light i {
+  color: var(--light-text) !important;
+}
+
+.light .nav-link {
+  color: var(--light-text) !important;
+}
+
+.light_bg_menu {
+  background-color: var(--light-bg) !important;
+  padding: 10px 0 !important;
+}
+
+.light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(23, 44, 102, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+body.light .social-icon-link {
+  border: 0.1px solid #172c66 !important;
+}
+
+body.light .footer-1 {
+  border-top: 2px solid #172c66 !important;
+}
+
+body.light .form-control {
+  border: 1px solid #172c66 !important;
+}
+
+body.light .dark_bg .services-item {
+  border: 2px solid !important;
+}
+
+body.light .icon-wrapper {
+  background-color: #8bd3dd;
+}
+
+body.light .btn.btn-secondary {
+  color: #fff !important;
+}
+
+body.light .contact a {
+  color: #fff !important;
+}
+
+body.light .contact a {
+  color: #fff !important;
+}
+
+body.light .section-title span {
+  color: #00bfff !important;
+}
+
+body.light .service-description {
+  background-color: #e6dcc8 !important;
+}
+
+body.light .footer-area {
+  background-color: #8bd3dd !important;
+}
+
+body.light .terminal-skills-container {
+  background-color: #8bd3dd !important;
+}
+
+body.light .btn.btn-secondary:hover {
+  background-color: #00bfff !important;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.7) !important;
+  border-color: #00bfff !important;
+}
+
+body.light .social__mediaIcons .fa-brands:hover {
+  color: #8bd3dd !important;
+}
+
+body.light .blog-thumb small + span {
+  color: #172c66 !important;
+}
+
+body.light .fa-solid:hover,
+body.light .fa-laptop-code {
+  color: #0056b3 !important;
+}
+
+body.light .fas.fa-coffee {
+  color: #fff !important;
+}
+
+body.light .fa-eye {
+  color: #fff !important;
+}
+
+body.light .fa-arrow-up {
+  color: #fff !important;
+}
+
+body.light .terminal-skills-title {
+  color: #fff !important;
+}
+
+body.light .controls .active {
+  color: #00bfff !important;
+  border-color: #8bd3dd;
+  background: #8bd3dd;
+}
+body.light .controls .btn {
+  text-transform: uppercase;
+  margin: 2px;
+  color: #fff !important;
+}
+
+body.light .modal-content {
+  background-color: #fef6e4;
+}
+
+body.light .close-button {
+  color: #0056b3 !important;
+}
+
+body.light .profile-name {
+  color: #ffffff !important;
+}
+
+body.light .fa-times {
+  color: #ffffff !important;
+}
+
+body.light .icon-label {
+  color: #ffffff !important;
+}
+
+/* Variables de color con @property para animación tema claro */
+@property --color-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000a1f;
+}
+@property --color-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #001d3d;
+}
+@property --color-3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #1a1a40;
+}
+@property --color-4 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #003566;
+}
+
+/* Keyframes para animar el cambio de colores */
+@keyframes deep-night-glow {
+  0% {
+    --color-1: #000a1f;
+    --color-2: #0056b3;
+    --color-3: #00bfff;
+    --color-4: #003566;
+  }
+  33% {
+    --color-1: #00bfff;
+    --color-2: #000a1f;
+    --color-3: #003566;
+    --color-4: #0056b3;
+  }
+  66% {
+    --color-1: #003566;
+    --color-2: #00bfff;
+    --color-3: #000a1f;
+    --color-4: #0056b3;
+  }
+  100% {
+    --color-1: #0056b3;
+    --color-2: #003566;
+    --color-3: #00bfff;
+    --color-4: #000a1f;
+  }
+}
+
+body.light .navbar-brand p {
+  font-size: 32px;
+  transition: all 0.4s ease;
+  font-family: "Fira Code", "Source Code Pro", "Monaco", monospace;
+  letter-spacing: 3px;
+  position: relative;
+
+  /* Efecto de gradiente animado con colores oscuros */
+  background: linear-gradient(
+    to right in oklch,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3),
+    var(--color-4)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  animation: deep-night-glow 5s linear infinite;
+
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+body.light .mobile-views-label {
+  background-color: #0056b3;
+  color: white !important;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+body.light .mobile-views-count {
+  background-color: #00bfff;
+  color: white !important;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: center;
+}
+
+body.light .cd-headline.clip ::after {
+  background-color: #172c66;
 }
 
 /* ==========================================================================

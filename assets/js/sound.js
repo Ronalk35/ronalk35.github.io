@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Crear el objeto una sola vez
   const clickSound = new Audio("assets/sound/nav.mp3");
+  clickSound.volume = 0.1;
 
   // Obtener el botón del navbar
   const navbarToggler = document.querySelector(".navbar-toggler");

@@ -19,8 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const darkBgMenuElements = document.querySelectorAll(".dark_bg_menu");
   
   // Definir rutas de imagen (sin barra inicial para rutas relativas)
-  const darkImagePath = "assets/img/ronald_portafolio.png";
-  const lightImagePath = "assets/img/ronald_portafolio_light.png";
+  const darkImagePng = "assets/img/ronald_portafolio.png";
+  const darkImageWebp = "assets/img/ronald_portafolio.webp";
+  const lightImagePng = "assets/img/ronald_portafolio_light.png";
+  const lightImageWebp = "assets/img/ronald_portafolio_light.webp";
+  
+  // Imprime la estructura HTML para depuración
+  console.log("Estructura del banner de imágenes:", document.querySelector(".banner-images").innerHTML);
   
   // Estado inicial - verificar si ya hay una preferencia guardada
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -62,18 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
       element.classList.add("dark_bg_menu");
     });
     
-    // Cambiar la imagen a la versión oscura
-    const profileImage = document.querySelector(".banner-images img");
-    if (profileImage) {
-      // Añadimos un timestamp para evitar el caché
-      const timestamp = new Date().getTime();
-      profileImage.src = `${darkImagePath}?t=${timestamp}`;
-      console.log("Imagen cambiada a tema oscuro:", profileImage.src);
-    } else {
-      console.error(
-        "No se encontró la imagen de perfil para cambiar al tema oscuro"
-      );
-    }
+    // Enfoque radical: reemplazar toda la estructura de la imagen
+    cambiarImagen(false);
     
     // Guardar preferencia
     localStorage.setItem("darkMode", "true");
@@ -101,21 +96,62 @@ document.addEventListener("DOMContentLoaded", function () {
       element.classList.add("light_bg_menu");
     });
     
-    // Cambiar la imagen a la versión clara
-    const profileImage = document.querySelector(".banner-images img");
-    if (profileImage) {
-      // Añadimos un timestamp para evitar el caché
-      const timestamp = new Date().getTime();
-      profileImage.src = `${lightImagePath}?t=${timestamp}`;
-      console.log("Imagen cambiada a tema claro:", profileImage.src);
-    } else {
-      console.error(
-        "No se encontró la imagen de perfil para cambiar al tema claro"
-      );
-    }
+    // Enfoque radical: reemplazar toda la estructura de la imagen
+    cambiarImagen(true);
     
     // Guardar preferencia
     localStorage.setItem("darkMode", "false");
+  }
+  
+  // Función para cambiar radicalmente la imagen
+  function cambiarImagen(modoClaro) {
+    const bannerContainer = document.querySelector(".banner-images");
+    if (!bannerContainer) {
+      console.error("No se encontró el contenedor de la imagen");
+      return;
+    }
+    
+    console.log("Contenedor de banner encontrado, cambiando a modo:", modoClaro ? "claro" : "oscuro");
+    
+    // Timestamp para evitar caché
+    const timestamp = new Date().getTime();
+    
+    // Rutas de imagen según el modo
+    const pngSrc = modoClaro ? lightImagePng : darkImagePng;
+    const webpSrc = modoClaro ? lightImageWebp : darkImageWebp;
+    
+    // Verificar si hay elementos dentro antes de intentar manipularlos
+    const pictureElement = bannerContainer.querySelector("picture");
+    
+    if (pictureElement) {
+      console.log("Elemento picture encontrado, actualizando su contenido");
+      
+      // Crear nueva estructura HTML
+      const nuevoHTML = `
+        <source srcset="${webpSrc}?t=${timestamp}" type="image/webp">
+        <source srcset="${pngSrc}?t=${timestamp}" type="image/png">
+        <img src="${webpSrc}?t=${timestamp}" alt="Ronald Urbano Chávez" width="400" height="400" loading="lazy" />
+      `;
+      
+      // Reemplazar el contenido interno del elemento picture
+      pictureElement.innerHTML = nuevoHTML;
+      console.log("Contenido actualizado de picture:", pictureElement.innerHTML);
+    } else {
+      console.log("No se encontró elemento picture, creando uno nuevo");
+      
+      // Crear completamente nuevo elemento
+      const nuevoHTML = `
+        <picture>
+          <source srcset="${webpSrc}?t=${timestamp}" type="image/webp">
+          <source srcset="${pngSrc}?t=${timestamp}" type="image/png">
+          <img src="${webpSrc}?t=${timestamp}" alt="Ronald Urbano Chávez" width="400" height="400" loading="lazy" />
+        </picture>
+      `;
+      
+      // Reemplazar todo el contenido del banner
+      bannerContainer.innerHTML = nuevoHTML;
+      console.log("Nuevo contenido del banner:", bannerContainer.innerHTML);
+    }
   }
   
   // Función para reproducir el sonido
@@ -142,13 +178,15 @@ document.addEventListener("DOMContentLoaded", function () {
       // Reproducir sonido
       playSound();
       
-      // Forzar un reflow/repaint
+      // Forzar un reflow/repaint y verificar el resultado
       setTimeout(() => {
-        // Verificar si el cambio de imagen se aplicó correctamente
-        const currentImage = document.querySelector(".banner-images img");
-        if (currentImage) {
-          console.log("Imagen actual después del cambio:", currentImage.src);
-        }
+        const webpSrc = document.querySelector(".banner-images picture source[type='image/webp']");
+        const pngSrc = document.querySelector(".banner-images picture source[type='image/png']");
+        const imgElem = document.querySelector(".banner-images picture img");
+        
+        console.log("Después del cambio - WebP source:", webpSrc ? webpSrc.srcset : "no encontrado");
+        console.log("Después del cambio - PNG source:", pngSrc ? pngSrc.srcset : "no encontrado");
+        console.log("Después del cambio - IMG src:", imgElem ? imgElem.src : "no encontrado");
       }, 100);
     } catch (error) {
       console.error("Error al cambiar el tema:", error);
@@ -161,8 +199,17 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Botón clicado - estado:", themeSwitch.checked);
   });
   
-  // Depuración
-  console.log("Estado inicial:", localStorage.getItem("darkMode"));
+  // Depuración inicial
+  console.log("Estado inicial del tema:", localStorage.getItem("darkMode"));
+  
+  // Verificar elementos iniciales
+  const webpSrc = document.querySelector(".banner-images picture source[type='image/webp']");
+  const pngSrc = document.querySelector(".banner-images picture source[type='image/png']");
+  const imgElem = document.querySelector(".banner-images picture img");
+  
+  console.log("Estado inicial - WebP source:", webpSrc ? webpSrc.srcset : "no encontrado");
+  console.log("Estado inicial - PNG source:", pngSrc ? pngSrc.srcset : "no encontrado");
+  console.log("Estado inicial - IMG src:", imgElem ? imgElem.src : "no encontrado");
 });
 
 

@@ -103,9 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0; 
         transform: translateY(-20px);
       }
-    }
-
-    .coder-modal-content {
+    }.coder-modal-content {
       position: relative;
       width: 90%;
       max-width: 500px;
@@ -197,9 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .window-buttons {
       display: flex;
       gap: 6px; 
-    }
-    
-    .dot {
+    }.dot {
       width: 10px; 
       height: 10px; 
       border-radius: 50%;
@@ -304,9 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         margin-top: 60px;
       }
     }
-  `;
-
-  // 3. INSERTAR HTML Y CSS EN EL DOCUMENTO
+  `; // 3. INSERTAR HTML Y CSS EN EL DOCUMENTO
   // Crear e insertar el contenedor del modal
   const modalContainer = document.createElement("div");
   modalContainer.innerHTML = modalHTML;
@@ -321,7 +315,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const laptopCodeIcon = document.querySelector(".fa-laptop-code");
   const coderModal = document.getElementById("coderModal");
   const closeBtn = document.getElementById("closeCoderModal");
-  const mainNav = document.querySelector(".navbar"); 
+  const mainNav = document.querySelector(".navbar");
+
+  // Crear el objeto de audio
+  const switchSound = new Audio("assets/sound/resume.mp3");
+  switchSound.volume = 0.2;
 
   if (laptopCodeIcon && coderModal && closeBtn) {
     // Función para desactivar la navegación (solo en móvil y tablet)
@@ -340,8 +338,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Evento para abrir el modal al hacer clic en el icono
     laptopCodeIcon.addEventListener("click", function (e) {
-      e.preventDefault(); 
-      e.stopPropagation(); 
+      e.preventDefault();
+      e.stopPropagation();
+      // Reproducir sonido al abrir el modal
+      switchSound.play();
       coderModal.style.display = "block";
       // Agregar clase para animación de apertura
       setTimeout(() => {
@@ -353,14 +353,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Evento para cerrar el modal al hacer clic en el botón X
     closeBtn.addEventListener("click", function (e) {
-      e.preventDefault(); 
+      e.preventDefault();
       e.stopPropagation();
+      // Reproducir sonido al cerrar el modal
+      switchSound.play();
 
       // Agregar clase para animación de cierre
       coderModal.classList.remove("modal-open");
-      coderModal.classList.add("modal-close");
-
-      // Esperar a que termine
+      coderModal.classList.add("modal-close"); // Esperar a que termine
       setTimeout(() => {
         coderModal.style.display = "none";
         coderModal.classList.remove("modal-close");
@@ -373,6 +373,9 @@ document.addEventListener("DOMContentLoaded", function () {
     coderModal.addEventListener("click", function (event) {
       // Verificar que el clic fue directamente en el fondo del modal y no en su contenido
       if (event.target === coderModal) {
+        // Reproducir sonido al cerrar el modal
+        switchSound.play();
+
         // Agregar clase para animación de cierre
         coderModal.classList.remove("modal-open");
         coderModal.classList.add("modal-close");
@@ -390,6 +393,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mejorar el cierre táctil para dispositivos móviles
     coderModal.addEventListener("touchstart", function (event) {
       if (event.target === coderModal) {
+        // Reproducir sonido al cerrar el modal con toque táctil
+        switchSound.play();
+
         // Agregar clase para animación de cierre
         coderModal.classList.remove("modal-open");
         coderModal.classList.add("modal-close");
@@ -402,6 +408,6 @@ document.addEventListener("DOMContentLoaded", function () {
           enableNavigation(); // Activar la navegación
         }, 500); // Igual al tiempo de la animación fadeOut
       }
-    } ,{ passive: true});
+    });
   }
 });

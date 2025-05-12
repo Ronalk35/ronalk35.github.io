@@ -77,4 +77,4 @@ El portafolio muestra proyectos en las siguientes áreas:
 
 - LightHouse:
 
-![Vista previa del portafolio](assets/img/P_Lighthouse.png)
+![Vista previa del portafolio](assets/img/lighthouse.png)

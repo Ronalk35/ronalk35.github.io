@@ -84,37 +84,30 @@ El portafolio muestra proyectos en las siguientes áreas:
 ## Paleta de Colores - Portafolio Ronald 2.0
 
 ## Tema Claro (Light Mode)
-
 ### Colores Primarios
-
 | Rol         | Color       | Descripción                                                  | Muestra                          |
 |-------------|-------------|--------------------------------------------------------------|----------------------------------|
-| Principal   | `#fef6e4`   | Beige claro para fondos y áreas principales                  | <div style="width:30px;height:20px;background:#fef6e4;"></div> |
-| Secundario  | `#8bd3dd`   | Turquesa suave para acentos y elementos interactivos         | <div style="width:30px;height:20px;background:#8bd3dd;"></div> |
-| Terciario   | `#0056b3`   | Azul oscuro para botones y llamados a la acción              | <div style="width:30px;height:20px;background:#0056b3;"></div> |
+| Principal   | `#fef6e4`   | Beige claro para fondos y áreas principales                  | ![](https://via.placeholder.com/30x20/fef6e4/000000?text=+) |
+| Secundario  | `#8bd3dd`   | Turquesa suave para acentos y elementos interactivos         | ![](https://via.placeholder.com/30x20/8bd3dd/000000?text=+) |
+| Terciario   | `#0056b3`   | Azul oscuro para botones y llamados a la acción              | ![](https://via.placeholder.com/30x20/0056b3/FFFFFF?text=+) |
 
 ### Gradientes
-
 | Nombre        | Código                                                                                   | Muestra |
 |---------------|-------------------------------------------------------------------------------------------|---------|
-| Gradiente 1    | `linear-gradient(120deg, #0078ff 0%, #00c896 100%)` + `box-shadow: 0 0 25px rgba(0, 123, 255, 0.8)` | *(ver en CSS)* |
+| Gradiente 1    | `linear-gradient(120deg, #0078ff 0%, #00c896 100%)` + `box-shadow: 0 0 25px rgba(0, 123, 255, 0.8)` | ![](https://via.placeholder.com/150x30/0078ff/FFFFFF?text=+)![](https://via.placeholder.com/150x30/00c896/FFFFFF?text=+) |
 
 ---
-
 ## Tema Oscuro (Dark Mode)
-
 ### Colores Primarios
-
 | Rol              | Color       | Descripción                                             | Muestra                          |
 |------------------|-------------|---------------------------------------------------------|----------------------------------|
-| Fondo Principal  | `#000a1f`   | Azul marino muy oscuro para el fondo general            | <div style="width:30px;height:20px;background:#000a1f;"></div> |
-| Texto Principal  | `#ffffff`   | Blanco puro para texto principal                        | <div style="width:30px;height:20px;background:#ffffff;border:1px solid #ccc;"></div> |
-| Texto Secundario | `#00bfff`   | Azul celeste para textos secundarios                    | <div style="width:30px;height:20px;background:#00bfff;"></div> |
-| Footer           | `#02102b`   | Azul grisáceo oscuro para el pie de página              | <div style="width:30px;height:20px;background:#02102b;"></div> |
+| Fondo Principal  | `#000a1f`   | Azul marino muy oscuro para el fondo general            | ![](https://via.placeholder.com/30x20/000a1f/FFFFFF?text=+) |
+| Texto Principal  | `#ffffff`   | Blanco puro para texto principal                        | ![](https://via.placeholder.com/30x20/ffffff/000000?text=+) |
+| Texto Secundario | `#00bfff`   | Azul celeste para textos secundarios                    | ![](https://via.placeholder.com/30x20/00bfff/000000?text=+) |
+| Footer           | `#02102b`   | Azul grisáceo oscuro para el pie de página              | ![](https://via.placeholder.com/30x20/02102b/FFFFFF?text=+) |
 
 ### Gradientes
-
 | Nombre        | Código                                                                                   | Muestra |
 |---------------|-------------------------------------------------------------------------------------------|---------|
-| Gradiente 1    | `linear-gradient(120deg, #3a9fff 0%, #26e0b0 100%)` + `box-shadow: 0 0 25px rgba(0, 123, 255, 0.8)` | *(ver en CSS)* |
+| Gradiente 1    | `linear-gradient(120deg, #3a9fff 0%, #26e0b0 100%)` + `box-shadow: 0 0 25px rgba(0, 123, 255, 0.8)` | ![](https://via.placeholder.com/150x30/3a9fff/FFFFFF?text=+)![](https://via.placeholder.com/150x30/26e0b0/FFFFFF?text=+) |
 

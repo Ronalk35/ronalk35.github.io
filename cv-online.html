@@ -52,10 +52,14 @@
     
     <title>📄 CV. - Ronald Urbano Chávez</title>
     <script>
-    if (!document.referrer.includes('ronalk35.github.io')) {
+    // Verificar si el acceso fue autorizado a través del icono o si viene del dominio correcto
+    if (!sessionStorage.getItem('authorized_access') && !document.referrer.includes('ronalk35.github.io')) {
         window.location.replace('https://ronalk35.github.io/');
+    } else {
+        // Limpiar después de un acceso exitoso para evitar accesos posteriores sin autorización
+        sessionStorage.removeItem('authorized_access');
     }
-    </script>
+   </script>
     <style>
         * {
             margin: 0;

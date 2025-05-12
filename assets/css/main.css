@@ -2085,6 +2085,9 @@ body.light .controls .btn {
 body.light .modal-content {
   background-color: #fef6e4;
 }
+body.light .neon-text a {
+  color: #0055b0 !important;
+}
 
 body.light .close-button {
   color: #0056b3 !important;

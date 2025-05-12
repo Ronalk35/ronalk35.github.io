@@ -155,7 +155,6 @@
 					<li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
 					<li class="nav-item"><a class="nav-link" href="#blog">Proyectos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-					<li class="nav-item"><a class="nav-link" href="cv-online.html">CV</a></li>
 					<li class="nav-item"><a class="nav-link" href="https://ronalk35.github.io/urbano.dev.academy/"
 							target="_blank">Blog</a></li>
 				</ul>
@@ -212,7 +211,10 @@
 					<div class="banner_content">
 						<h3>Hola! <span class="wave-hand">👋</span></h3>
 						<h1 class="cd-headline clip">
-							<span class="fw_600">Yo soy</span>  <i class="fa-solid fa-laptop-code"></i>
+							<span class="fw_600">Yo soy</span>  <i class="fa-solid fa-laptop-code"></i><a
+								href="cv-online.html" class="cv-link">
+								<i class="fa-solid fa-user-tie" id="cv-icon" onclick="accessCV()"></i>
+							</a>
 							<br>
 							<span class="cd-words-wrapper">
 								<b class="is-visible fw_600">Ronald Urbano C. </b>
@@ -1476,6 +1478,13 @@
 
 				// Cambiar el texto cada 3 segundos
 				setInterval(toggleText, 3000);
+			</script>
+			<script>
+				function accessCV() {
+					// Establece una cookie o valor en sessionStorage para acceso autorizado
+					sessionStorage.setItem('authorized_access', 'true');
+					window.location.href = 'cv-online.html';
+				}
 			</script>
 </body>
 

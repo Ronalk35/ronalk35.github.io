@@ -2050,6 +2050,11 @@ body.light .fa-laptop-code {
   color: #0056b3 !important;
 }
 
+body.light .fa-solid:hover,
+body.light .fa-user-tie {
+  color: #0056b3 !important;
+}
+
 body.light .fas.fa-coffee {
   color: #fff !important;
 }
@@ -3311,6 +3316,79 @@ textarea::placeholder {
 /* ==========================================================================
 *. botón de alternar tema
 ========================================================================== */
+/* Estilos para dispositivos móviles y tablets */
+@media (max-width: 991px) {
+  .fa-user-tie {
+    color: #00bfff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse-icon 2s infinite;
+    position: relative;
+    top: -1px;
+    margin-left: 8px;
+  }
+
+  .fa-user-tie:hover {
+    transform: scale(1.2);
+    color: #33ccff;
+  }
+
+  @keyframes pulse-icon {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 992px) {
+  .fa-user-tie {
+    color: #00bfff;
+    cursor: pointer;
+    font-size: 2.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse-icon 2s infinite;
+    position: relative;
+    top: -3px;
+    margin-left: 8px;
+  }
+
+  .fa-user-tie:hover {
+    transform: scale(1.2);
+    color: #33ccff;
+  }
+  
+  @keyframes pulse-icon {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Cursor de puntero es clickeable */
+#cv-icon {
+  cursor: pointer;
+}
+
 
 
 

@@ -3,7 +3,7 @@
 ## Descripción del Proyecto
 
 - **Nombre**: `portafolio-ronald-2.0`
-- **Versión**: `2.0.0`
+- **Versión**: `2.0.2`
 - **Descripción**: Nueva versión del portafolio de Ronald Urbano Chávez.
 - **Autor**: Ronald Urbano Chávez
 

@@ -2203,6 +2203,9 @@ body.light .mobile-views-count {
 body.light .cd-headline.clip ::after {
   background-color: #172c66;
 }
+body.light .form-control {
+  color: #172c66 !important; 
+}
 
 /* ==========================================================================
 *. Color navegación fin

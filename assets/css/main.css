@@ -1602,7 +1602,7 @@ footer-1 h3 {
 }
 
 .btn-coffee:hover {
-  background: #1f51b1 !important;
+  background: #0056b3 !important;
   animation: shake 0.5s ease-in-out forwards;
 }
 
@@ -1659,7 +1659,7 @@ footer-1 h3 {
 }
 
 .btn-wsp:hover {
-  background: #1f51b1;
+  background: #0056b3;
   animation: shake 0.4s ease-in-out forwards;
 }
 

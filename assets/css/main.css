@@ -2057,6 +2057,9 @@ body.light .fa-solid:hover,
 body.light .fa-laptop-code {
   color: #0056b3 !important;
 }
+body.light .fa-laptop {
+  color: #0056b3  !important;
+}
 
 body.light .fa-solid:hover,
 body.light .fa-user-tie {

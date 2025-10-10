@@ -73,6 +73,12 @@ El portafolio muestra proyectos en las siguientes áreas:
 
 ---
 
+- Diseño del Portafolio Móvil:
+
+![Vista previa del portafolio](assets/img/movil.png)
+
+---
+
 ## Puntuación
 
 - LightHouse:

@@ -93,6 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
         transform: translateY(0);
       }
     }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
+    .profile-img {
+      animation: float 3s ease-in-out infinite;
+    }
     
     @keyframes fadeOut {
       from { 
@@ -411,3 +420,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+

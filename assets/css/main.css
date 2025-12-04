@@ -3433,4 +3433,46 @@ textarea::placeholder {
 
 
 
+/* Estilos para Papá Noel colgando */
+.santa-hanging {
+  position: fixed;
+  top: 56px; /* Ajusta según la altura de tu navbar */
+  right: 180px; /* Posición desde la derecha */
+  z-index: 999; /* Debajo del navbar pero encima del contenido */
+  pointer-events: none; /* No interfiere con los clicks */
+}
+
+.santa-image {
+  width: 120px; /* Ajusta el tamaño según prefieras */
+  height: auto;
+  display: block;
+  animation: swingSanta 3s ease-in-out infinite;
+  transform-origin: top center;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Animación de balanceo */
+@keyframes swingSanta {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Responsive - ajusta el tamaño en móviles */
+@media (max-width: 768px) {
+  .santa-hanging {
+    right: 20px;
+    top: 80px; /* Baja más en móviles */
+  }
+  
+  .santa-image {
+    width: 80px;
+  }
+}
+
+
+
 

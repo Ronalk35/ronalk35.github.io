@@ -3404,5 +3404,33 @@ textarea::placeholder {
 }
 
 
+/* tooltip de botones banner */
+.banner_btn {
+  position: relative;
+}
+
+.banner_btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00bfff;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.banner_btn[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 
 

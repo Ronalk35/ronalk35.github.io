@@ -286,19 +286,22 @@
 /* Estilos para Papá Noel colgando ahora Graduacion */
 .santa-hanging {
   position: fixed;
-  top: 66px; /* Ajusta según la altura de tu navbar */
+  top: 68px; /* Ajusta según la altura de tu navbar */
   right: 180px; /* Posición desde la derecha */
   z-index: 999; /* Debajo del navbar pero encima del contenido */
   pointer-events: none; /* No interfiere con los clicks */
 }
 
 .santa-image {
-  width: 120px; /* Ajusta el tamaño */
+  width: 95px; /* Ajusta el tamaño */
   height: auto;
   display: block;
   animation: swingSanta 3s ease-in-out infinite;
   transform-origin: top center;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+  filter:
+    contrast(1.1)
+    saturate(1.05)
+    drop-shadow(2px 4px 6px rgba(0,0,0,.3));
 }
 
 /* Animación de balanceo */
